@@ -1,0 +1,26 @@
+CoRE4INET Model for INET Framework
+==============================================
+
+CoRE4INET is an extension to the INET-Framework for the event-based
+simulation of real-time Ethernet in the OMNEST/OMNeT++ simulation system.
+It was created by the CoRE (Communication over Realtime Ethernet) research
+group at the HAW-Hamburg (Hamburg University of Applied Sciences).
+
+Example simulations are grouped into the following subdirectories:
+
+   AS6802/rt-tictoc/                                     example that shows the usage of the API
+   AS6802/small_network/                                 example that shows a small network with traffic generation
+   AS6802/synchronization/                               examples of AS6802 synchronisation protocol
+   AS6802/synchronization/HighIntegrity_small            Small network with high integrity configuration
+   AS6802/synchronization/StandardIntegrity_large        Large network with standard integrity configuration
+   AS6802/synchronization/StandardIntegrity_medium       Medium network with standard integrity configuration
+   avb_AS6802/small_network/                             example that shows a small network with avb and AS6802 traffic
+   avb_AS6802/large_network/                             example that shows a larger network with avb and AS6802 traffic
+   inet/small_network                                    example that shows a small network with IP traffic sent over AS6802 and avb
+   ...
+
+The package's main README file contains links to additional info to help you
+get started with the model.
+
+PLEASE SET THE PATH TO THE INET-FRAMEWORK:
+export INETPATH=your/path/to/inet

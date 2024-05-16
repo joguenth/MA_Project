@@ -1,0 +1,62 @@
+%description:
+Test SRPTable
+
+%includes:
+#include "core4inet/services/avb/SRP/SRPTable.h"
+#include "inet/linklayer/common/MACAddress.h"
+#include "core4inet/base/avb/AVBDefs.h"
+
+%inifile: test.ini
+[General]
+check-signals = true
+network = Test
+cmdenv-express-mode = false
+output-vector-file = test.vec
+output-scalar-file = test.sca
+simtime-resolution = -12
+
+%global:
+#define PrintModulelist(X)  for (std::list<cModule*>::iterator module = X.begin(); module!=X.end();module++){EV_TRACE<<(*module)->getName()<< " ";}
+
+%activity:
+
+cSimpleModule port1;
+port1.setName("port1");
+cSimpleModule port2;
+port2.setName("port2");
+cSimpleModule port3;
+port3.setName("port3");
+cSimpleModule port4;
+port4.setName("port4");
+cSimpleModule application1;
+application1.setName("application1");
+cSimpleModule application2;
+application2.setName("application2");
+
+cModuleType *moduleType = cModuleType::get("core4inet.services.avb.SRP.SRPTable");
+CoRE4INET::SRPTable *table = dynamic_cast<CoRE4INET::SRPTable*>(moduleType->createScheduleInit("srpTable", this));
+table->clear();
+std::list<cModule*> ports = table->getListenersForStreamId(0);
+EV_INFO << "Ports:{";
+PrintModulelist(ports);
+EV_INFO << "}" << std::endl;
+table->updateTalkerWithStreamId(0, &port1, inet::MACAddress("01:02:03:04:05:06"), CoRE4INET::SR_CLASS::A, 500, 1, 0);
+//table->updateTalkerWithStreamId(0, &port1, inet::MACAddress("01:02:03:04:05:06"));
+table->updateTalkerWithStreamId(1, &port2, inet::MACAddress("01:02:03:04:05:07"), CoRE4INET::SR_CLASS::A, 252, 1, 1);
+table->updateTalkerWithStreamId(3, &application1, inet::MACAddress("01:02:03:04:05:08"), CoRE4INET::SR_CLASS::A, 252, 1, 2);
+table->printState();
+table->updateListenerWithStreamId(0, &port3, 0);
+table->updateListenerWithStreamId(1, &port4, 1);
+table->updateListenerWithStreamId(1, &application2, 1);
+table->printState();
+EV_INFO << "Bandwidth for "<< port3.getName() <<" is " << table->getBandwidthForModule(&port3) << "Bps" << std::endl;
+table->updateListenerWithStreamId(1, &port3, 1);
+table->printState();
+EV_INFO << "Bandwidth for "<< port3.getName() <<" is " << table->getBandwidthForModule(&port3) << "Bps" << std::endl;
+ports = table->getListenersForStreamId(1);
+EV_INFO << "Ports:{";
+PrintModulelist(ports);
+EV_INFO << "}" << std::endl;
+
+%contains: stdout
+Ports:{}

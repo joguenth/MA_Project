@@ -1,0 +1,34 @@
+#! /bin/sh
+#
+# usage: runtest [<testfile>...]
+# without args, runs all *.test files in the current directory
+#
+
+MAKE="make"
+
+DBG_SUFFIX=""
+
+TESTFILES=$*
+if [ "x$TESTFILES" = "x" ]; then TESTFILES='*.test'; fi
+echo "Testing: $TESTFILES"
+rm -rf work
+mkdir work
+cp -pPR lib work/       # OSX dos not support cp -a
+#EXTRA_INCLUDES=`find ../../src/ -type d | sed s!^!-I../!`
+EXTRA_INCLUDES="$EXTRA_INCLUDES -I./lib -I../../../src -I../../../../inet/src "
+opp_test gen $OPT -v $TESTFILES || exit 1
+echo
+(cd work; opp_makemake -f --deep -lCoRE4INET$DBG_SUFFIX -lINET$DBG_SUFFIX -L../../../../inet/src -L../../../src -P . $EXTRA_INCLUDES -i ../makefrag; $MAKE -e cleanall; $MAKE -e) || exit 1
+echo
+export NEDPATH=$NEDPATH:.:../../../../src:../../../../../inet/src
+export LD_LIBRARY_PATH=../../../../inet/src
+opp_test run $OPT -v $TESTFILES
+if [ $? -eq 0 ]
+then
+  echo Test ok, results can be found in ./work
+  exit 0
+else
+  echo Test failed, results can be found in ./work
+  exit 1
+
+fi

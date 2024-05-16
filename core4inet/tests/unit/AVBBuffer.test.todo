@@ -1,0 +1,73 @@
+%description:
+
+Test AVBBuffer
+
+
+%includes:
+
+#include "CoRE4INET_SRPTable.h"
+#include "CoRE4INET_AVBQueueBuffer.h"
+#include "CoRE4INET_AVBDefs.h"
+#include "CoRE4INET_SimpleOscillator.h"
+
+
+%inifile: test.ini
+
+[General]
+check-signals = true
+network = Test
+cmdenv-express-mode = false
+output-vector-file = test.vec
+output-scalar-file = test.sca
+simtime-scale = -12
+
+
+%global:
+
+#define PrintModulelist(X)  for (std::list<cModule*>::iterator module = X.begin(); module!=X.end();++module){ev<<(*module)->getName()<< " ";}
+#define PrintCredit(x) ev << "Credit = " << x << std::endl
+
+
+%activity:
+
+cSimpleModule port1;
+port1.setName("port1");
+cSimpleModule port2;
+port2.setName("port2");
+
+cModuleType *moduleTypeTable = cModuleType::get("core4inet.scheduler.oscillator.SimpleOscillator");
+CoRE4INET::Oscillator *oscillator = (CoRE4INET::Oscillator*)moduleTypeTable->createScheduleInit("oscillator", this);
+
+moduleTypeTable = cModuleType::get("core4inet.services.avb.SRP.SRPTable");
+CoRE4INET::SRPTable *table = (CoRE4INET::SRPTable*)moduleTypeTable->createScheduleInit("srpTable", this);
+table->clear();
+std::list<cModule*> ports = table->getListenersForStreamId(0);
+ev << "Ports:{";
+PrintModulelist(ports);
+ev << "}" << std::endl;
+table->updateTalkerWithStreamId(0, &port1, inet::MACAddress("01:02:03:04:05:06"), CoRE4INET::SR_CLASS_A, 350, 1, 2);
+table->printState();
+table->updateListenerWithStreamId(0, &port2, 2);
+table->printState();
+ev << "Bandwidth for "<< port2.getName() <<" is " << table->getBandwidthForModule(&port2) << "Bps" << std::endl;
+
+cModuleType *moduleTypeBuffer = cModuleType::get("core4inet.buffer.avb.AVBQueueBuffer");
+CoRE4INET::AVBQueueBuffer *avbBuffer = dynamic_cast<CoRE4INET::AVBQueueBuffer*>(moduleTypeBuffer->createScheduleInit("avbBuffer", this));
+avbBuffer->resetCredit();
+ev << "Init:" << std::endl;
+PrintCredit(avbBuffer->getCredit());
+SimTime interval = 0.000125;
+
+ev << "IdleSlope:" << std::endl;
+avbBuffer->idleSlope(interval);
+PrintCredit(avbBuffer->getCredit());
+
+ev << "InterferenzSlope:" << std::endl;
+avbBuffer->interferenceSlope(interval);
+PrintCredit(avbBuffer->getCredit());
+
+//ev << "SendSlope:" << std::endl;
+//avbBuffer->sendSlope(interval);
+//PrintCredit(avbBuffer->getCredit());
+
+
