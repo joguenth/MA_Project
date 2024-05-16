@@ -1,0 +1,171 @@
+
+**.host19.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+    **.host19.app[0].srcAddress = "0A-00-00-00-00-13"
+    **.host19.app[0].destAddress = "0A-00-00-00-00-17"
+    **.host19.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+    **.host19.app[0].sendInterval = 10ms
+    **.host19.app[0].startTime = 3.1s
+    **.host19.app[0].priority = 7
+    **.host19.app[0].vid = 6
+    **.host19.app[0].streamID = 10
+
+**.host19.app[1].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+    **.host19.app[1].srcAddress = "0A-00-00-00-00-13"
+    **.host19.app[1].destAddress = "0A-00-00-00-00-17"
+    **.host19.app[1].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+    **.host19.app[1].sendInterval = 10ms
+    **.host19.app[1].startTime = 3.1s
+    **.host19.app[1].priority = 7
+    **.host19.app[1].vid = 6
+    **.host19.app[1].streamID = 10
+
+
+
+**.host19.numApps = 2
+**.host19.bgIn.destination_gates = "app[0].in, app[1].in"
+
+
+**.host18.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+    **.host18.app[0].srcAddress = "0A-00-00-00-00-12"
+    **.host18.app[0].destAddress = "0A-00-00-00-00-17"
+    **.host18.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+    **.host18.app[0].sendInterval = 10ms
+    **.host18.app[0].startTime = 3.1s
+    **.host18.app[0].priority = 7
+    **.host18.app[0].vid = 6
+    **.host18.app[0].streamID = 11
+
+**.host18.numApps = 1
+**.host18.bgIn.destination_gates = "app[0].in"
+
+
+
+
+
+
+**.host1.numApps = 1
+**.host1.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host1.app[0].srcAddress = "0A-00-00-00-00-01"
+**.host1.app[0].destAddress = "0A-00-00-00-00-15"
+**.host1.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host1.app[0].sendInterval = 10ms
+**.host1.app[0].startTime = 2.3s
+**.host1.app[0].priority = 6
+**.host1.app[0].vid = 6
+**.host1.app[0].streamID = 1
+**.host1.bgIn.destination_gates = "app[0].in"
+
+**.host21.numApps = 1
+**.host21.app[0].typename = "IEEE8021QSRPLikeTrafficSinkApp"
+**.host21.app[0].srcAddress = "0A-00-00-00-00-01"
+**.host21.bgIn.destination_gates = "app[0].in"
+
+**.host3.numApps = 1
+**.host3.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host3.app[0].srcAddress = "0A-00-00-00-00-03"
+**.host3.app[0].destAddress = "0A-00-00-00-00-0D"
+**.host3.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host3.app[0].sendInterval = 5ms
+**.host3.app[0].startTime = 3.1s
+**.host3.app[0].priority = 7
+**.host3.app[0].vid = 7
+**.host3.app[0].streamID = 2
+**.host3.bgIn.destination_gates = "app[0].in"
+
+**.host13.numApps = 1 
+**.host13.app[0].typename = "IEEE8021QSRPLikeTrafficSinkApp"
+**.host13.app[0].srcAddress = "0A-00-00-00-00-03"
+**.host13.bgIn.destination_gates = "app[0].in"
+
+
+
+
+
+**.host2.numApps = 5
+**.host2.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host2.app[0].srcAddress = "0A-00-00-00-00-02"
+**.host2.app[0].destAddress = "0A-00-00-00-00-15"
+**.host2.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host2.app[0].sendInterval = 10ms
+**.host2.app[0].startTime = 2.3s
+**.host2.app[0].priority = 7
+**.host2.app[0].vid = 6
+**.host2.app[0].streamID = 3
+**.host2.bgIn.destination_gates = "app[4].in"
+
+**.host2.app[1].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host2.app[1].srcAddress = "0A-00-00-00-00-02"
+**.host2.app[1].destAddress = "0A-00-00-00-00-15"
+**.host2.app[1].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host2.app[1].sendInterval = 10ms
+**.host2.app[1].startTime = 2.2994s
+**.host2.app[1].priority = 7
+**.host2.app[1].vid = 6
+**.host2.app[1].streamID = 3
+
+**.host2.app[2].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host2.app[2].srcAddress = "0A-00-00-00-00-02"
+**.host2.app[2].destAddress = "0A-00-00-00-00-15"
+**.host2.app[2].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host2.app[2].sendInterval = 10ms
+**.host2.app[2].startTime = 2.2994s
+**.host2.app[2].priority = 7
+**.host2.app[2].vid = 6
+**.host2.app[2].streamID = 3
+
+**.host2.app[3].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host2.app[3].srcAddress = "0A-00-00-00-00-02"
+**.host2.app[3].destAddress = "0A-00-00-00-00-15"
+**.host2.app[3].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host2.app[3].sendInterval = 10ms
+**.host2.app[3].startTime = 2.2994s
+**.host2.app[3].priority = 7
+**.host2.app[3].vid = 6
+**.host2.app[3].streamID = 3
+
+**.host2.app[4].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host2.app[4].srcAddress = "0A-00-00-00-00-02"
+**.host2.app[4].destAddress = "0A-00-00-00-00-15"
+**.host2.app[4].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host2.app[4].sendInterval = 10ms
+**.host2.app[4].startTime = 2.2994s
+**.host2.app[4].priority = 7
+**.host2.app[4].vid = 6
+**.host2.app[4].streamID = 3
+
+**.host4.numApps = 1
+**.host4.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host4.app[0].srcAddress = "0A-00-00-00-00-04"
+**.host4.app[0].destAddress = "0A-00-00-00-00-15"
+**.host4.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host4.app[0].sendInterval = 10ms
+**.host4.app[0].startTime = 2.3s
+**.host4.app[0].priority = 7
+**.host4.app[0].vid = 6
+**.host4.app[0].streamID = 4
+**.host4.bgIn.destination_gates = "app[0].in"
+
+**.host5.numApps = 1
+**.host5.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host5.app[0].srcAddress = "0A-00-00-00-00-05"
+**.host5.app[0].destAddress = "0A-00-00-00-00-15"
+**.host5.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host5.app[0].sendInterval = 10ms
+**.host5.app[0].startTime = 2.3s
+**.host5.app[0].priority = 7
+**.host5.app[0].vid = 6
+**.host5.app[0].streamID = 5
+**.host5.bgIn.destination_gates = "app[0].in"
+
+
+**.host6.numApps = 1
+**.host6.app[0].typename = "IEEE8021QSRPLikeTrafficSourceApp"
+**.host6.app[0].srcAddress = "0A-00-00-00-00-06"
+**.host6.app[0].destAddress = "0A-00-00-00-00-15"
+**.host6.app[0].payload = intWithUnit(uniform(1500Byte, 1500Byte))
+**.host6.app[0].sendInterval = 10ms
+**.host6.app[0].startTime = 2.3s
+**.host6.app[0].priority = 7
+**.host6.app[0].vid = 6
+**.host6.app[0].streamID = 6
+**.host6.bgIn.destination_gates = "app[0].in"

@@ -1,0 +1,3083 @@
+file 33520349 1648589053                                        
+version 2
+run General-0-20220329-23:23:04-3204
+attr configname General
+attr datetime 20220329-23:23:04
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network small_network_ofnc_flowmod
+attr processid 3204
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.scheduler.tick 80ns
+param **.scheduler.numPeriods 1
+param **.scheduler.period[0].cycle_ticks sec_to_tick(500us)
+param **.scheduler.oscillator.max_drift 200ppm
+param **.scheduler.oscillator.drift_change uniform(-50ppm,50ppm)
+param **.precission 500ns
+param **.pcpSRClassA 7
+param **.pcpSRClassB 6
+param **.gateControlList.period "\"period[0]\""
+param **.node1.phy[*].mac.address "\"0A-00-00-00-00-01\""
+param **.node1.numApps 2
+param **.node1.phy[*].taggedVIDs "\"0,1,2\""
+param **.node1.phy[*].shaper.gateControlList.controlList "\"C,C,C,C,C,C,C,C:0;C,C,C,C,C,C,C,o:0.00015;o,o,o,o,o,o,o,C:0.0003\""
+param **.node1.app[0].typename "\"IEEE8021QTrafficSourceApp\""
+param **.node1.app[0].destAddress "\"0A-00-00-00-00-02\""
+param **.node1.app[0].payload "intWithUnit(uniform(1500Byte, 1500Byte))"
+param **.node1.app[0].sendInterval 500us
+param **.node1.app[0].priority 7
+param **.node1.app[0].vid 1
+param **.node1.app[0].startTime 10ms
+param **.node1.app[1].typename "\"BGTrafficSourceApp\""
+param **.node1.app[1].destAddress "\"0A-00-00-00-00-02\""
+param **.node1.app[1].payload "intWithUnit(uniform(1500Byte, 1500Byte))"
+param **.node1.app[1].sendInterval 5ms
+param **.node2.phy[*].mac.address "\"0A-00-00-00-00-02\""
+param **.node2.phy[*].taggedVIDs "\"0,1,2\""
+param **.node2.numApps 2
+param **.node2.phy[*].shaper.gateControlList.controlList "\"o,o,o,o,o,o,o,o:0\""
+param **.node2.app[0].typename "\"IEEE8021QTrafficSinkApp\""
+param **.node2.app[0].srcAddress "\"0A-00-00-00-00-01\""
+param **.node2.app[1].typename "\"BGTrafficSinkApp\""
+param **.node2.app[1].srcAddress "\"0A-00-00-00-00-01\""
+param **.node2.bgIn.destination_gates "\"app[0].in, app[1].in\""
+param small_network_ofnc_nwtu.node3.phy[*].mac.address "\"0A-00-00-00-00-03\""
+param small_network_ofnc_nwtu.node3.phy[*].taggedVIDs "\"0,1,2\""
+param small_network_ofnc_nwtu.node3.phy[*].shaper.gateControlList.controlList "\"o,o,o,o,o,o,o,o:0\""
+param small_network_ofnc_nwtu.node3.numApps 1
+param small_network_ofnc_nwtu.node3.app[0].typename "\"BGTrafficSinkApp\""
+param small_network_ofnc_nwtu.node3.app[0].srcAddress "\"0A-00-00-00-00-01\""
+param small_network_ofnc_nwtu.node3.bgIn.destination_gates "\"app[0].in\""
+param **.switch2.eth[*].mac.address "\"0A-00-00-00-00-C2\""
+param **.switch2.etherMAC[0].untaggedVID 0
+param **.switch2.etherMAC[0].taggedVIDs "\"0,1,2\""
+param **.switch2.etherMAC[1].untaggedVID 0
+param **.switch2.etherMAC[1].taggedVIDs "\"0,1,2\""
+param **.switch2.etherMAC[2].untaggedVID 0
+param **.switch2.etherMAC[2].taggedVIDs "\"0,1,2\""
+param **.switch2.switchAgent.connectAddress "\"controller\""
+param **.switch2.switchAgent.connectAt 0s
+param **.switch2.switchAgent.bufferCapacity 3712
+param **.switch2.of_service_time 3.5us
+param **.switch2.hardware_delay 3.5us
+param **.switch2.etherMAC[*].shaper.transmissionSelectionAlgorithm[6].typename "\"CreditBasedShaper\""
+param **.switch2.etherMAC[*].shaper.transmissionSelectionAlgorithm[6].srClass "\"B\""
+param **.switch2.etherMAC[*].shaper.gateControlList.controlList "\"C,C,C,C,C,C,C,o:0;o,o,o,o,o,o,o,C:0.00005;C,C,C,C,C,C,C,C:0.00025;C,C,C,C,C,C,C,o:0.0004\""
+param **.switch1.eth[*].mac.address "\"0A-00-00-00-00-C1\""
+param **.switch1.etherMAC[0].untaggedVID 0
+param **.switch1.etherMAC[0].taggedVIDs "\"0,1,2\""
+param **.switch1.etherMAC[1].untaggedVID 0
+param **.switch1.etherMAC[1].taggedVIDs "\"0,1,2\""
+param **.switch1.switchAgent.connectAddress "\"controller\""
+param **.switch1.switchAgent.connectAt 0s
+param **.switch1.switchAgent.bufferCapacity 3712
+param **.switch1.of_service_time 3.5us
+param **.switch1.hardware_delay 3.5us
+param **.switch1.etherMAC[*].shaper.transmissionSelectionAlgorithm[6].typename "\"CreditBasedShaper\""
+param **.switch1.etherMAC[*].shaper.transmissionSelectionAlgorithm[6].srClass "\"B\""
+param **.switch1.etherMAC[*].shaper.gateControlList.controlList "\"o,o,o,o,o,o,o,C:0;C,C,C,C,C,C,C,C:0.000125;C,C,C,C,C,C,C,o:0.00025;o,o,o,o,o,o,o,C:0.000375\""
+param **.controller.serviceTime 500ns
+param **.controller.numControllerApps 1
+param **.controller.controllerApps[0].typename "\"AVBLearningControllerApp\""
+param **.controller.controllerApps[0].configXML "xmldoc(\"controllerconfig.xml\")"
+param **.controller.numNetConfApps 1
+param **.controller.netconf.netConfApps[0].typename "\"NetConfApplicationBase\""
+param **.controller.netconf.netConfApps[0].serverConnections "xmldoc(\"netconf_of_example_config.xml\")"
+
+vector 0 small_network_ofnc_flowmod.controller.ethg$o[0].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 1 small_network_ofnc_flowmod.ethswitch.ethg$o[0].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 2 small_network_ofnc_flowmod.ethswitch.ethg$o[1].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 3 small_network_ofnc_flowmod.ethswitch.ethg$o[2].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 4 small_network_ofnc_flowmod.switch1.gateControlPlane$o.channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 5 small_network_ofnc_flowmod.switch1.gateDataPlane$o[0].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 6 small_network_ofnc_flowmod.switch1.gateDataPlane$o[1].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 7 small_network_ofnc_flowmod.switch2.gateControlPlane$o.channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 8 small_network_ofnc_flowmod.switch2.gateDataPlane$o[0].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 9 small_network_ofnc_flowmod.switch2.gateDataPlane$o[1].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 10 small_network_ofnc_flowmod.switch2.gateDataPlane$o[2].channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 11 small_network_ofnc_flowmod.node1.ethg$o.channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 12 small_network_ofnc_flowmod.node2.ethg$o.channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 13 small_network_ofnc_flowmod.node3.ethg$o.channel busy:vector ETV
+attr interpolationmode sample-hold
+attr source channelBusy
+vector 14 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 15 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 16 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 17 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 18 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 19 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 20 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 21 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 22 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 23 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 24 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 25 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 26 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 27 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 28 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 29 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 30 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 31 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 32 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 33 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 34 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 35 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 36 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 37 small_network_ofnc_flowmod.switch1.eth[0].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 38 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 39 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 40 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 41 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 42 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 43 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 44 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 45 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 46 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 47 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 48 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 49 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 50 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 51 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 52 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 53 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 54 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 55 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 56 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 57 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 58 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 59 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 60 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 61 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 62 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 63 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 64 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 65 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 66 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 67 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 68 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 69 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 70 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 71 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 72 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 73 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 74 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 75 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 76 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 77 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 78 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 79 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 80 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 81 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 82 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 83 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 84 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 85 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 86 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 87 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 88 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 89 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 90 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 91 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 92 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 93 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 94 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 95 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 96 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 97 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 98 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 99 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 100 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 101 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 102 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 103 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 104 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 105 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 106 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 107 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 108 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 109 small_network_ofnc_flowmod.switch2.eth[0].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 110 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 111 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 112 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 113 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 114 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 115 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 116 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 117 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 118 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 119 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 120 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 121 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 122 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 123 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 124 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 125 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 126 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 127 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 128 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 129 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 130 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 131 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 132 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 133 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 134 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 135 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 136 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 137 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 138 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 139 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 140 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 141 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 142 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 143 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 144 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 145 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 146 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 147 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 148 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 149 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 150 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 151 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 152 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 153 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 154 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 155 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 156 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 157 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 158 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 159 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 160 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 161 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 162 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 163 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 164 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 165 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 166 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 167 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 168 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 169 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 170 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 171 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 172 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 173 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 174 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 175 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 176 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 177 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 178 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 179 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 180 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 181 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 182 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 183 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 184 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 185 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 186 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 187 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 188 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 189 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 190 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 191 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 192 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 193 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 194 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 195 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 196 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 197 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 198 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 199 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 200 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 201 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 202 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 203 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 204 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 205 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 206 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 207 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 208 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 209 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 210 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 211 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 212 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 213 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 214 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 215 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 216 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 217 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 218 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 219 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 220 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 221 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 222 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 223 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 224 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 225 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 226 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 227 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 228 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 229 small_network_ofnc_flowmod.node2.phy[0].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 230 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp0Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 231 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp0Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 232 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp0Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 233 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp1Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 234 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp1Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 235 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp1Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 236 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp2Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 237 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp2Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 238 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp2Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 239 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp3Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 240 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp3Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 241 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp3Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 242 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp4Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 243 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp4Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 244 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp4Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 245 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp5Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 246 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp5Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 247 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp5Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 248 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp6Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 249 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp6Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 250 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp6Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 251 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 252 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 253 small_network_ofnc_flowmod.node3.phy[0].shaper.transmissionSelection qPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 254 small_network_ofnc_flowmod.node1.app[1] payloadOverTime:vector ETV
+attr interpolationmode linear
+attr source payloadSignal
+attr title "payload over time, vector"
+attr unit B
+vector 255 small_network_ofnc_flowmod.node1.app[1] sendIntervalOverTime:vector ETV
+attr interpolationmode linear
+attr source intervalSignal
+attr title "send interval over time, vector"
+attr unit s
+vector 256 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 257 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 258 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[6] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 259 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[5] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 260 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[4] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 261 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[3] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 262 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[2] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 263 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[1] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 264 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 265 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[6] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 266 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[5] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 267 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[4] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 268 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[3] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 269 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[2] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 270 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[1] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 271 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 272 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[6] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 273 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[5] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 274 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[4] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 275 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[3] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 276 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[2] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 277 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[1] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 278 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 279 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 280 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[6] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 281 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[5] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 282 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[4] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 283 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[3] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 284 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[2] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 285 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[1] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 286 small_network_ofnc_flowmod.node1.phy[0].shaper.transmissionGate[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 287 small_network_ofnc_flowmod.node1.bgOut rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 288 small_network_ofnc_flowmod.node1.bgOut rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 289 small_network_ofnc_flowmod.node1.bgOut length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 290 small_network_ofnc_flowmod.node1.bgOut size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 291 small_network_ofnc_flowmod.node1.bgOut txBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "Transmitted Bytes, vector(packetBytes)"
+attr unit B
+vector 292 small_network_ofnc_flowmod.node1.bgOut txLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(txPk)
+attr title "End-to-end latency (transmitted), vector"
+attr unit s
+vector 293 small_network_ofnc_flowmod.switch1.tcp tcpRcvQueueBytes ETV
+vector 294 small_network_ofnc_flowmod.switch1.tcp "advertised window" ETV
+vector 295 small_network_ofnc_flowmod.switch1.tcp "receive window" ETV
+vector 296 small_network_ofnc_flowmod.switch1.tcp "sent ack" ETV
+vector 297 small_network_ofnc_flowmod.switch2.tcp tcpRcvQueueBytes ETV
+vector 298 small_network_ofnc_flowmod.switch2.tcp "advertised window" ETV
+vector 299 small_network_ofnc_flowmod.switch2.tcp "receive window" ETV
+vector 300 small_network_ofnc_flowmod.switch2.tcp "sent ack" ETV
+vector 301 small_network_ofnc_flowmod.switch1.networkLayer.arp sentReq:vector ETV
+attr title "ARP request sent, vector"
+vector 302 small_network_ofnc_flowmod.switch2.networkLayer.arp sentReq:vector ETV
+attr title "ARP request sent, vector"
+vector 303 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 304 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 305 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 306 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 307 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 308 small_network_ofnc_flowmod.switch1.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 309 small_network_ofnc_flowmod.switch2.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 310 small_network_ofnc_flowmod.switch1.eth[0].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 311 small_network_ofnc_flowmod.switch1.eth[0].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 312 small_network_ofnc_flowmod.switch1.eth[0].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 313 small_network_ofnc_flowmod.switch1.eth[0].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 314 small_network_ofnc_flowmod.switch1.eth[0].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 315 small_network_ofnc_flowmod.switch2.eth[0].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 316 small_network_ofnc_flowmod.switch2.eth[0].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 317 small_network_ofnc_flowmod.switch2.eth[0].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 318 small_network_ofnc_flowmod.switch2.eth[0].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 319 small_network_ofnc_flowmod.switch2.eth[0].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 320 small_network_ofnc_flowmod.switch1.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 321 small_network_ofnc_flowmod.switch2.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 322 small_network_ofnc_flowmod.switch1.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 323 small_network_ofnc_flowmod.switch2.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 324 small_network_ofnc_flowmod.ethswitch.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 325 small_network_ofnc_flowmod.ethswitch.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 326 small_network_ofnc_flowmod.ethswitch.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 327 small_network_ofnc_flowmod.ethswitch.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 328 small_network_ofnc_flowmod.ethswitch.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 329 small_network_ofnc_flowmod.ethswitch.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 330 small_network_ofnc_flowmod.ethswitch.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 331 small_network_ofnc_flowmod.ethswitch.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 332 small_network_ofnc_flowmod.controller.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 333 small_network_ofnc_flowmod.controller.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 334 small_network_ofnc_flowmod.controller.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 335 small_network_ofnc_flowmod.controller.networkLayer.arp sentReply:vector ETV
+attr title "ARP replies sent, vector"
+vector 336 small_network_ofnc_flowmod.controller.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 337 small_network_ofnc_flowmod.controller.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 338 small_network_ofnc_flowmod.ethswitch.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 339 small_network_ofnc_flowmod.ethswitch.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 340 small_network_ofnc_flowmod.switch1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 341 small_network_ofnc_flowmod.switch1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 342 small_network_ofnc_flowmod.switch2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 343 small_network_ofnc_flowmod.switch2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 344 small_network_ofnc_flowmod.switch1.eth[0].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 345 small_network_ofnc_flowmod.switch1.eth[0].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 346 small_network_ofnc_flowmod.switch2.eth[0].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 347 small_network_ofnc_flowmod.switch2.eth[0].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 348 small_network_ofnc_flowmod.switch1.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 349 small_network_ofnc_flowmod.switch2.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 350 small_network_ofnc_flowmod.controller.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 351 small_network_ofnc_flowmod.ethswitch.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 352 small_network_ofnc_flowmod.ethswitch.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 353 small_network_ofnc_flowmod.controller.tcp "rcvd seq" ETV
+vector 354 small_network_ofnc_flowmod.controller.tcp "rcvd ack" ETV
+vector 355 small_network_ofnc_flowmod.controller.tcp "advertised window" ETV
+vector 356 small_network_ofnc_flowmod.controller.tcp "send window" ETV
+vector 357 small_network_ofnc_flowmod.controller.tcp tcpRcvQueueBytes ETV
+vector 358 small_network_ofnc_flowmod.controller.tcp "receive window" ETV
+vector 359 small_network_ofnc_flowmod.controller.tcp "sent ack" ETV
+vector 360 small_network_ofnc_flowmod.controller.tcp "rcvd seq" ETV
+vector 361 small_network_ofnc_flowmod.controller.tcp "rcvd ack" ETV
+vector 362 small_network_ofnc_flowmod.controller.tcp "advertised window" ETV
+vector 363 small_network_ofnc_flowmod.controller.tcp "send window" ETV
+vector 364 small_network_ofnc_flowmod.controller.tcp tcpRcvQueueBytes ETV
+vector 365 small_network_ofnc_flowmod.controller.tcp "receive window" ETV
+vector 366 small_network_ofnc_flowmod.controller.tcp "sent ack" ETV
+vector 367 small_network_ofnc_flowmod.switch1.tcp "rcvd seq" ETV
+vector 368 small_network_ofnc_flowmod.switch1.tcp "rcvd ack" ETV
+vector 369 small_network_ofnc_flowmod.switch1.tcp "send window" ETV
+vector 370 small_network_ofnc_flowmod.switch1.tcp "sent seq" ETV
+vector 371 small_network_ofnc_flowmod.switch1.tcp "unacked bytes" ETV
+vector 372 small_network_ofnc_flowmod.switch2.tcp "rcvd seq" ETV
+vector 373 small_network_ofnc_flowmod.switch2.tcp "rcvd ack" ETV
+vector 374 small_network_ofnc_flowmod.switch2.tcp "send window" ETV
+vector 375 small_network_ofnc_flowmod.switch2.tcp "sent seq" ETV
+vector 376 small_network_ofnc_flowmod.switch2.tcp "unacked bytes" ETV
+vector 377 small_network_ofnc_flowmod.controller.tcp "unacked bytes" ETV
+vector 378 small_network_ofnc_flowmod.controller.tcp cwnd ETV
+vector 379 small_network_ofnc_flowmod.controller.tcp "rcvd dupAcks" ETV
+vector 380 small_network_ofnc_flowmod.controller.OF_Controller queueSize:vector ETV
+attr interpolationmode none
+attr title "QueueSize, vector"
+vector 381 small_network_ofnc_flowmod.controller.OF_Controller waitingTime:vector ETV
+attr interpolationmode none
+attr title "WaitingTime, vector"
+vector 382 small_network_ofnc_flowmod.controller.tcp "unacked bytes" ETV
+vector 383 small_network_ofnc_flowmod.controller.tcp cwnd ETV
+vector 384 small_network_ofnc_flowmod.controller.tcp "rcvd dupAcks" ETV
+vector 385 small_network_ofnc_flowmod.controller.tcp "sent seq" ETV
+vector 386 small_network_ofnc_flowmod.switch1.tcp "measured RTT" ETV
+vector 387 small_network_ofnc_flowmod.switch1.tcp "smoothed RTT" ETV
+vector 388 small_network_ofnc_flowmod.switch1.tcp RTTVAR ETV
+vector 389 small_network_ofnc_flowmod.switch1.tcp RTO ETV
+vector 390 small_network_ofnc_flowmod.switch1.tcp cwnd ETV
+vector 391 small_network_ofnc_flowmod.switch1.tcp "rcvd dupAcks" ETV
+vector 392 small_network_ofnc_flowmod.switch2.tcp "measured RTT" ETV
+vector 393 small_network_ofnc_flowmod.switch2.tcp "smoothed RTT" ETV
+vector 394 small_network_ofnc_flowmod.switch2.tcp RTTVAR ETV
+vector 395 small_network_ofnc_flowmod.switch2.tcp RTO ETV
+vector 396 small_network_ofnc_flowmod.switch2.tcp cwnd ETV
+vector 397 small_network_ofnc_flowmod.switch2.tcp "rcvd dupAcks" ETV
+vector 398 small_network_ofnc_flowmod.controller.tcp "sent seq" ETV
+vector 399 small_network_ofnc_flowmod.controller.tcp "measured RTT" ETV
+vector 400 small_network_ofnc_flowmod.controller.tcp "smoothed RTT" ETV
+vector 401 small_network_ofnc_flowmod.controller.tcp RTTVAR ETV
+vector 402 small_network_ofnc_flowmod.controller.tcp RTO ETV
+vector 403 small_network_ofnc_flowmod.controller.tcp "measured RTT" ETV
+vector 404 small_network_ofnc_flowmod.controller.tcp "smoothed RTT" ETV
+vector 405 small_network_ofnc_flowmod.controller.tcp RTTVAR ETV
+vector 406 small_network_ofnc_flowmod.controller.tcp RTO ETV
+vector 407 small_network_ofnc_flowmod.switch1.switchAgent queueSize:vector ETV
+attr interpolationmode none
+attr title "QueueSize, vector"
+vector 408 small_network_ofnc_flowmod.switch1.switchAgent bufferSize:vector ETV
+attr interpolationmode none
+attr title "BufferSize, vector"
+vector 409 small_network_ofnc_flowmod.switch2.switchAgent queueSize:vector ETV
+attr interpolationmode none
+attr title "QueueSize, vector"
+vector 410 small_network_ofnc_flowmod.switch2.switchAgent bufferSize:vector ETV
+attr interpolationmode none
+attr title "BufferSize, vector"
+vector 411 small_network_ofnc_flowmod.switch1.switchAgent waitingTime:vector ETV
+attr interpolationmode none
+attr title "WaitingTime, vector"
+vector 412 small_network_ofnc_flowmod.switch2.switchAgent waitingTime:vector ETV
+attr interpolationmode none
+attr title "WaitingTime, vector"
+vector 413 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.transmissionGate[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 414 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.transmissionGate[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 415 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.transmissionGate[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 416 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[6] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 417 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[5] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 418 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[4] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 419 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[3] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 420 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[2] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 421 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[1] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 422 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.transmissionGate[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 423 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[6] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 424 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[5] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 425 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[4] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 426 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[3] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 427 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[2] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 428 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[1] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 429 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.transmissionGate[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 430 small_network_ofnc_flowmod.node1.phy[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 431 small_network_ofnc_flowmod.node1.phy[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 432 small_network_ofnc_flowmod.switch1.etherMAC[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 433 small_network_ofnc_flowmod.switch1.etherMAC[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 434 small_network_ofnc_flowmod.switch1.etherMAC[1].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 435 small_network_ofnc_flowmod.switch1.etherMAC[1].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 436 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 437 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 438 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 439 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 440 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 441 small_network_ofnc_flowmod.switch1.etherMAC[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 442 small_network_ofnc_flowmod.node2.scheduler.period[0] newCycle:vector ETV
+attr interpolationmode none
+attr title "Start of cycle, vector"
+vector 443 small_network_ofnc_flowmod.node2.scheduler.oscillator currentDrift:vector ETV
+attr title "Current drift, vector"
+attr unit s
+vector 444 small_network_ofnc_flowmod.node2.scheduler.timer clockCorrection:vector ETV
+attr title "Clock correction, vector"
+attr unit tick
+vector 445 small_network_ofnc_flowmod.node3.scheduler.period[0] newCycle:vector ETV
+attr interpolationmode none
+attr title "Start of cycle, vector"
+vector 446 small_network_ofnc_flowmod.node3.scheduler.oscillator currentDrift:vector ETV
+attr title "Current drift, vector"
+attr unit s
+vector 447 small_network_ofnc_flowmod.node3.scheduler.timer clockCorrection:vector ETV
+attr title "Clock correction, vector"
+attr unit tick
+vector 448 small_network_ofnc_flowmod.node1.scheduler.period[0] newCycle:vector ETV
+attr interpolationmode none
+attr title "Start of cycle, vector"
+vector 449 small_network_ofnc_flowmod.node1.scheduler.oscillator currentDrift:vector ETV
+attr title "Current drift, vector"
+attr unit s
+vector 450 small_network_ofnc_flowmod.node1.scheduler.timer clockCorrection:vector ETV
+attr title "Clock correction, vector"
+attr unit tick
+vector 451 small_network_ofnc_flowmod.switch1.scheduler.period[0] newCycle:vector ETV
+attr interpolationmode none
+attr title "Start of cycle, vector"
+vector 452 small_network_ofnc_flowmod.switch1.scheduler.oscillator currentDrift:vector ETV
+attr title "Current drift, vector"
+attr unit s
+vector 453 small_network_ofnc_flowmod.switch1.scheduler.timer clockCorrection:vector ETV
+attr title "Clock correction, vector"
+attr unit tick
+vector 454 small_network_ofnc_flowmod.switch2.scheduler.period[0] newCycle:vector ETV
+attr interpolationmode none
+attr title "Start of cycle, vector"
+vector 455 small_network_ofnc_flowmod.switch2.scheduler.oscillator currentDrift:vector ETV
+attr title "Current drift, vector"
+attr unit s
+vector 456 small_network_ofnc_flowmod.switch2.scheduler.timer clockCorrection:vector ETV
+attr title "Clock correction, vector"
+attr unit tick
+vector 457 small_network_ofnc_flowmod.switch1.etherMAC[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 458 small_network_ofnc_flowmod.switch2.etherMAC[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 459 small_network_ofnc_flowmod.switch2.etherMAC[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 460 small_network_ofnc_flowmod.switch2.etherMAC[0].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 461 small_network_ofnc_flowmod.switch2.etherMAC[0].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 462 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 463 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 464 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 465 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 466 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 467 small_network_ofnc_flowmod.switch2.etherMAC[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 468 small_network_ofnc_flowmod.switch2.etherMAC[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 469 small_network_ofnc_flowmod.node2.phy[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 470 small_network_ofnc_flowmod.node2.phy[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 471 small_network_ofnc_flowmod.node2.phy[0].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 472 small_network_ofnc_flowmod.node2.phy[0].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 473 small_network_ofnc_flowmod.node2.bgIn rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 474 small_network_ofnc_flowmod.node2.bgIn rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 475 small_network_ofnc_flowmod.node2.bgIn length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 476 small_network_ofnc_flowmod.node2.bgIn size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 477 small_network_ofnc_flowmod.node2.bgIn txBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "Transmitted Bytes, vector(packetBytes)"
+attr unit B
+vector 478 small_network_ofnc_flowmod.node2.bgIn txLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(txPk)
+attr title "End-to-end latency (transmitted), vector"
+attr unit s
+vector 479 small_network_ofnc_flowmod.node2.app[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 480 small_network_ofnc_flowmod.node2.app[0] rxBytes:floatingIntervalSumVector(packetBytes) ETV
+vector 481 small_network_ofnc_flowmod.node2.app[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency, vector"
+attr unit s
+vector 482 small_network_ofnc_flowmod.node2.app[0] rxLatencyInner:vector ETV
+attr interpolationmode none
+attr source messageAge(innerMessage(rxPk))
+attr title "End-to-end latency inner, vector"
+attr unit s
+vector 483 small_network_ofnc_flowmod.node2.app[1] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 484 small_network_ofnc_flowmod.node2.app[1] rxBytes:floatingIntervalSumVector(packetBytes) ETV
+vector 485 small_network_ofnc_flowmod.node2.app[1] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency, vector"
+attr unit s
+vector 486 small_network_ofnc_flowmod.node2.app[1] rxLatencyInner:vector ETV
+attr interpolationmode none
+attr source messageAge(innerMessage(rxPk))
+attr title "End-to-end latency inner, vector"
+attr unit s
+vector 487 small_network_ofnc_flowmod.node2.bgOut rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 488 small_network_ofnc_flowmod.node2.bgOut rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 489 small_network_ofnc_flowmod.node2.bgOut length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 490 small_network_ofnc_flowmod.node2.bgOut size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 491 small_network_ofnc_flowmod.node2.bgOut txBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "Transmitted Bytes, vector(packetBytes)"
+attr unit B
+vector 492 small_network_ofnc_flowmod.node2.bgOut txLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(txPk)
+attr title "End-to-end latency (transmitted), vector"
+attr unit s
+vector 493 small_network_ofnc_flowmod.node2.phy[0].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 494 small_network_ofnc_flowmod.node2.phy[0].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 495 small_network_ofnc_flowmod.node2.phy[0].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 496 small_network_ofnc_flowmod.node2.phy[0].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 497 small_network_ofnc_flowmod.node2.phy[0].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 498 small_network_ofnc_flowmod.node2.phy[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 499 small_network_ofnc_flowmod.node2.phy[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 500 small_network_ofnc_flowmod.switch2.etherMAC[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 501 small_network_ofnc_flowmod.switch2.etherMAC[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 502 small_network_ofnc_flowmod.switch2.etherMAC[1].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 503 small_network_ofnc_flowmod.switch2.etherMAC[1].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 504 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 505 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 506 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 507 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 508 small_network_ofnc_flowmod.switch2.etherMAC[0].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 509 small_network_ofnc_flowmod.controller.tcp tcpRcvQueueBytes ETV
+vector 510 small_network_ofnc_flowmod.controller.tcp "advertised window" ETV
+vector 511 small_network_ofnc_flowmod.controller.tcp "receive window" ETV
+vector 512 small_network_ofnc_flowmod.controller.tcp "sent ack" ETV
+vector 513 small_network_ofnc_flowmod.switch2.tcp "rcvd seq" ETV
+vector 514 small_network_ofnc_flowmod.switch2.tcp "rcvd ack" ETV
+vector 515 small_network_ofnc_flowmod.switch2.tcp "advertised window" ETV
+vector 516 small_network_ofnc_flowmod.switch2.tcp "send window" ETV
+vector 517 small_network_ofnc_flowmod.switch2.tcp tcpRcvQueueBytes ETV
+vector 518 small_network_ofnc_flowmod.switch2.tcp "receive window" ETV
+vector 519 small_network_ofnc_flowmod.switch2.tcp "sent ack" ETV
+vector 520 small_network_ofnc_flowmod.controller.tcp "rcvd seq" ETV
+vector 521 small_network_ofnc_flowmod.controller.tcp "rcvd ack" ETV
+vector 522 small_network_ofnc_flowmod.controller.tcp "send window" ETV
+vector 523 small_network_ofnc_flowmod.controller.tcp "sent seq" ETV
+vector 524 small_network_ofnc_flowmod.controller.tcp "unacked bytes" ETV
+vector 525 small_network_ofnc_flowmod.switch2.tcp "unacked bytes" ETV
+vector 526 small_network_ofnc_flowmod.switch2.tcp cwnd ETV
+vector 527 small_network_ofnc_flowmod.switch2.tcp "rcvd dupAcks" ETV
+vector 528 small_network_ofnc_flowmod.switch2.netconf.netConfServer queueSize:vector ETV
+attr interpolationmode none
+attr title "QueueSize, vector"
+vector 529 small_network_ofnc_flowmod.switch2.netconf.netConfServer waitingTime:vector ETV
+attr interpolationmode none
+attr title "WaitingTime, vector"
+vector 530 small_network_ofnc_flowmod.switch2.tcp "sent seq" ETV
+vector 531 small_network_ofnc_flowmod.controller.tcp "measured RTT" ETV
+vector 532 small_network_ofnc_flowmod.controller.tcp "smoothed RTT" ETV
+vector 533 small_network_ofnc_flowmod.controller.tcp RTTVAR ETV
+vector 534 small_network_ofnc_flowmod.controller.tcp RTO ETV
+vector 535 small_network_ofnc_flowmod.controller.tcp cwnd ETV
+vector 536 small_network_ofnc_flowmod.controller.tcp "rcvd dupAcks" ETV
+vector 537 small_network_ofnc_flowmod.switch2.tcp "measured RTT" ETV
+vector 538 small_network_ofnc_flowmod.switch2.tcp "smoothed RTT" ETV
+vector 539 small_network_ofnc_flowmod.switch2.tcp RTTVAR ETV
+vector 540 small_network_ofnc_flowmod.switch2.tcp RTO ETV
+vector 541 small_network_ofnc_flowmod.switch2.etherMAC[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 542 small_network_ofnc_flowmod.switch2.etherMAC[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 543 small_network_ofnc_flowmod.switch1.etherMAC[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 544 small_network_ofnc_flowmod.switch1.etherMAC[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 545 small_network_ofnc_flowmod.switch1.etherMAC[0].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 546 small_network_ofnc_flowmod.switch1.etherMAC[0].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 547 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 548 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 549 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 550 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 551 small_network_ofnc_flowmod.switch1.etherMAC[1].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 552 small_network_ofnc_flowmod.switch1.etherMAC[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 553 small_network_ofnc_flowmod.switch1.etherMAC[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 554 small_network_ofnc_flowmod.node1.phy[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 555 small_network_ofnc_flowmod.node1.phy[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 556 small_network_ofnc_flowmod.node1.phy[0].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 557 small_network_ofnc_flowmod.node1.phy[0].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 558 small_network_ofnc_flowmod.node1.bgIn rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 559 small_network_ofnc_flowmod.node1.bgIn rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 560 small_network_ofnc_flowmod.node1.bgIn length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 561 small_network_ofnc_flowmod.node1.bgIn size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 562 small_network_ofnc_flowmod.node1.app[0] payloadOverTime:vector ETV
+attr interpolationmode linear
+attr source payloadSignal
+attr title "payload over time, vector"
+attr unit B
+vector 563 small_network_ofnc_flowmod.node1.app[0] txQPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Send Bytes, vector(packetBytes)"
+attr unit B
+vector 564 small_network_ofnc_flowmod.node1.app[0] txQPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 565 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 566 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 567 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 568 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 569 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 570 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 571 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 572 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 573 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 574 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 575 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 576 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 577 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 578 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 579 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 580 small_network_ofnc_flowmod.node2.app[0] rxQPcp7Bytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 581 small_network_ofnc_flowmod.node2.app[0] rxQPcp7Bytes:floatingIntervalSumVector(packetBytes) ETV
+vector 582 small_network_ofnc_flowmod.node2.app[0] rxQPcp7Latency:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency, vector"
+attr unit s
+vector 583 small_network_ofnc_flowmod.node2.app[0] rxQPcp7LatencyInner:vector ETV
+attr interpolationmode none
+attr title "End-to-end latency inner, vector"
+attr unit s
+vector 584 small_network_ofnc_flowmod.switch2.netconf.configurators[0] editConfigOk:vector ETV
+attr interpolationmode none
+attr title "execution of edit config Ok, vector"
+vector 585 small_network_ofnc_flowmod.switch2.netconf.configurators[1] editConfigError:vector ETV
+attr interpolationmode none
+attr title "execution of edit config Error, vector"
+vector 586 small_network_ofnc_flowmod.switch2.netconf.running editConfigOk:vector ETV
+attr interpolationmode none
+attr title "execution of edit config Ok, vector"
+vector 587 small_network_ofnc_flowmod.switch2.netconf.dataStoreManager editConfig:vector ETV
+attr interpolationmode none
+attr title "execution of edit config, vector"
+vector 588 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] rxBytes:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPk
+attr title "Received Bytes, vector(packetBytes)"
+attr unit B
+vector 589 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 590 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] length:vector ETV
+attr interpolationmode sample-hold
+attr source length
+attr title "Queue Length, vector"
+attr unit packets
+vector 591 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] size:vector ETV
+attr interpolationmode sample-hold
+attr source size
+attr title "Queue Size, vector"
+attr unit B
+vector 592 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] state:vector ETV
+attr "" ""
+attr interpolationmode sample-hold
+attr source NF_QBV_STATE_CHANGED
+attr title "State, vector"
+vector 593 small_network_ofnc_flowmod.switch2.etherMAC[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 594 small_network_ofnc_flowmod.switch2.etherMAC[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 595 small_network_ofnc_flowmod.node3.phy[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 596 small_network_ofnc_flowmod.node3.phy[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 597 small_network_ofnc_flowmod.node3.phy[0].inControl rxLatency:vector ETV
+attr interpolationmode none
+attr source messageAge(rxPk)
+attr title "End-to-end latency (received), vector"
+attr unit s
+vector 598 small_network_ofnc_flowmod.node3.phy[0].inControl bandwidthFloating:floatingIntervalSumVector(packetBytes) ETV
+vector 599 small_network_ofnc_flowmod.node1.bgOut maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 600 small_network_ofnc_flowmod.node1.bgOut minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 601 small_network_ofnc_flowmod.node1.bgOut bandwidth:IntervalSumVector(packetBytes) ETV
+vector 602 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 603 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 604 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[0] bandwidth:IntervalSumVector(packetBytes) ETV
+vector 605 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 606 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 607 small_network_ofnc_flowmod.node1.phy[0].shaper.queue[7] bandwidth:IntervalSumVector(packetBytes) ETV
+vector 608 small_network_ofnc_flowmod.node2.phy[0].inControl maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 609 small_network_ofnc_flowmod.node2.phy[0].inControl minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 610 small_network_ofnc_flowmod.node2.phy[0].inControl bandwidth:IntervalSumVector(packetBytes) ETV
+vector 611 small_network_ofnc_flowmod.node2.bgIn maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 612 small_network_ofnc_flowmod.node2.bgIn minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 613 small_network_ofnc_flowmod.node2.bgIn bandwidth:IntervalSumVector(packetBytes) ETV
+vector 614 small_network_ofnc_flowmod.switch1.etherMAC[1].inControl maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 615 small_network_ofnc_flowmod.switch1.etherMAC[1].inControl minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 616 small_network_ofnc_flowmod.switch1.etherMAC[1].inControl bandwidth:IntervalSumVector(packetBytes) ETV
+vector 617 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 618 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 619 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[7] bandwidth:IntervalSumVector(packetBytes) ETV
+vector 620 small_network_ofnc_flowmod.switch2.etherMAC[0].inControl maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 621 small_network_ofnc_flowmod.switch2.etherMAC[0].inControl minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 622 small_network_ofnc_flowmod.switch2.etherMAC[0].inControl bandwidth:IntervalSumVector(packetBytes) ETV
+vector 623 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 624 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 625 small_network_ofnc_flowmod.switch2.etherMAC[1].shaper.queue[7] bandwidth:IntervalSumVector(packetBytes) ETV
+vector 626 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 627 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 628 small_network_ofnc_flowmod.switch1.etherMAC[0].shaper.queue[0] bandwidth:IntervalSumVector(packetBytes) ETV
+vector 629 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 630 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 631 small_network_ofnc_flowmod.switch2.etherMAC[2].shaper.queue[0] bandwidth:IntervalSumVector(packetBytes) ETV
+vector 632 small_network_ofnc_flowmod.node3.phy[0].inControl maxPacketSize:IntervalMaxVector(packetBytes) ETV
+vector 633 small_network_ofnc_flowmod.node3.phy[0].inControl minPacketSize:IntervalMinVector(packetBytes) ETV
+vector 634 small_network_ofnc_flowmod.node3.phy[0].inControl bandwidth:IntervalSumVector(packetBytes) ETV
+0	107482 2529 0 72688 0 0.250006408 118 0 1 59 59
+1	110011 2543 0 72676 0 0.25000543 118 0 1 59 59
+2	112554 1214 0 4270 0 0.010309498303 56 0 1 28 28
+3	113768 1393 0 72694 0 0.250007034 66 0 1 33 33
+4	115161 1162 0 4297 0 0.010313868303 54 0 1 27 27
+5	116323 142453 0 362283 0 1.273275814816 5564 0 1 2782 2782
+6	258776 80 0 2206 0 0.001498200929 4 0 1 2 2
+7	258856 1343 0 72664 0 0.250004452 64 0 1 32 32
+8	260199 80 0 1869 0 0.001172966252 4 0 1 2 2
+9	260279 131822 0 362189 0 1.272901904864 5152 0 1 2576 2576
+10	392101 10963 0 361560 0 1.270549967836 410 0 1 205 205
+11	403064 146093 0 362263 0 1.273149864816 5564 0 1 2782 2782
+12	549157 75 0 1386 0 0.000882934 4 0 1 2 2
+13	549232 9 0 0 0 0 1 0 0 0 0
+14	549241 658 0 4296 0 0.010313868303 28 0 594 6326 3018956
+15	549899 692 0 4296 0 0.010313868303 28 0 6262 82788 377442368
+16	550591 669 0 4296 0 0.010313868303 28 0 9.824e-06 4.4208e-05 3.6191616e-10
+17	551260 9 0 0 0 0 1 0 0 0 0
+18	551269 9 0 0 0 0 1 0 0 0 0
+19	551278 9 0 0 0 0 1 0 0 0 0
+20	551287 9 0 0 0 0 1 0 0 0 0
+21	551296 9 0 0 0 0 1 0 0 0 0
+22	551305 9 0 0 0 0 1 0 0 0 0
+23	551314 9 0 0 0 0 1 0 0 0 0
+24	551323 9 0 0 0 0 1 0 0 0 0
+25	551332 9 0 0 0 0 1 0 0 0 0
+26	551341 9 0 0 0 0 1 0 0 0 0
+27	551350 9 0 0 0 0 1 0 0 0 0
+28	551359 9 0 0 0 0 1 0 0 0 0
+29	551368 9 0 0 0 0 1 0 0 0 0
+30	551377 9 0 0 0 0 1 0 0 0 0
+31	551386 9 0 0 0 0 1 0 0 0 0
+32	551395 9 0 0 0 0 1 0 0 0 0
+33	551404 9 0 0 0 0 1 0 0 0 0
+34	551413 9 0 0 0 0 1 0 0 0 0
+35	551422 9 0 0 0 0 1 0 0 0 0
+36	551431 9 0 0 0 0 1 0 0 0 0
+37	551440 9 0 0 0 0 1 0 0 0 0
+38	551449 7554 0 361469 0 1.270399450572 256 0 1518 387090 587602620
+39	559003 9765 0 361469 0 1.270399450572 312 0 305118 64225062 16430648155020
+40	568768 10076 0 361469 0 1.270399450572 256 0 0.000468882 0.104841011677 4.3151757543507e-05
+41	578844 9 0 0 0 0 1 0 0 0 0
+42	578853 9 0 0 0 0 1 0 0 0 0
+43	578862 9 0 0 0 0 1 0 0 0 0
+44	578871 9 0 0 0 0 1 0 0 0 0
+45	578880 9 0 0 0 0 1 0 0 0 0
+46	578889 9 0 0 0 0 1 0 0 0 0
+47	578898 9 0 0 0 0 1 0 0 0 0
+48	578907 9 0 0 0 0 1 0 0 0 0
+49	578916 9 0 0 0 0 1 0 0 0 0
+50	578925 9 0 0 0 0 1 0 0 0 0
+51	578934 9 0 0 0 0 1 0 0 0 0
+52	578943 9 0 0 0 0 1 0 0 0 0
+53	578952 9 0 0 0 0 1 0 0 0 0
+54	578961 9 0 0 0 0 1 0 0 0 0
+55	578970 9 0 0 0 0 1 0 0 0 0
+56	578979 9 0 0 0 0 1 0 0 0 0
+57	578988 9 0 0 0 0 1 0 0 0 0
+58	578997 9 0 0 0 0 1 0 0 0 0
+59	579006 74826 0 362282 0 1.273275814816 2528 0 1522 3846094 5853755068
+60	653832 98993 0 362282 0 1.273275814816 3055 0 3045522 6253890390 1.5948176768529e+16
+61	752825 99815 0 362282 0 1.273275814816 2528 0 0.000319118303 0.697474018259 0.00019251082268771
+62	852640 65 0 2205 0 0.001498200929 3 0 1518 3036 4608648
+63	852705 65 0 2205 0 0.001498200929 3 0 3036 4554 11521620
+64	852770 85 0 2205 0 0.001498200929 3 0 0.000738306929 0.001353573858 9.236505153305e-07
+65	852855 9 0 0 0 0 1 0 0 0 0
+66	852864 9 0 0 0 0 1 0 0 0 0
+67	852873 9 0 0 0 0 1 0 0 0 0
+68	852882 9 0 0 0 0 1 0 0 0 0
+69	852891 9 0 0 0 0 1 0 0 0 0
+70	852900 9 0 0 0 0 1 0 0 0 0
+71	852909 9 0 0 0 0 1 0 0 0 0
+72	852918 9 0 0 0 0 1 0 0 0 0
+73	852927 9 0 0 0 0 1 0 0 0 0
+74	852936 9 0 0 0 0 1 0 0 0 0
+75	852945 9 0 0 0 0 1 0 0 0 0
+76	852954 9 0 0 0 0 1 0 0 0 0
+77	852963 9 0 0 0 0 1 0 0 0 0
+78	852972 9 0 0 0 0 1 0 0 0 0
+79	852981 9 0 0 0 0 1 0 0 0 0
+80	852990 9 0 0 0 0 1 0 0 0 0
+81	852999 9 0 0 0 0 1 0 0 0 0
+82	853008 9 0 0 0 0 1 0 0 0 0
+83	853017 9 0 0 0 0 1 0 0 0 0
+84	853026 9 0 0 0 0 1 0 0 0 0
+85	853035 9 0 0 0 0 1 0 0 0 0
+86	853044 756 0 72663 0 0.250004452 33 0 594 6734 3054652
+87	853800 799 0 72663 0 0.250004452 33 0 6670 111146 544763236
+88	854599 775 0 72663 0 0.250004452 33 0 9.824e-06 4.5552e-05 3.62819328e-10
+89	855374 9 0 0 0 0 1 0 0 0 0
+90	855383 9 0 0 0 0 1 0 0 0 0
+91	855392 9 0 0 0 0 1 0 0 0 0
+92	855401 9 0 0 0 0 1 0 0 0 0
+93	855410 9 0 0 0 0 1 0 0 0 0
+94	855419 9 0 0 0 0 1 0 0 0 0
+95	855428 9 0 0 0 0 1 0 0 0 0
+96	855437 9 0 0 0 0 1 0 0 0 0
+97	855446 9 0 0 0 0 1 0 0 0 0
+98	855455 9 0 0 0 0 1 0 0 0 0
+99	855464 9 0 0 0 0 1 0 0 0 0
+100	855473 10 0 0 0 0 1 0 0 0 0
+101	855483 10 0 0 0 0 1 0 0 0 0
+102	855493 10 0 0 0 0 1 0 0 0 0
+103	855503 10 0 0 0 0 1 0 0 0 0
+104	855513 10 0 0 0 0 1 0 0 0 0
+105	855523 10 0 0 0 0 1 0 0 0 0
+106	855533 10 0 0 0 0 1 0 0 0 0
+107	855543 10 0 0 0 0 1 0 0 0 0
+108	855553 10 0 0 0 0 1 0 0 0 0
+109	855563 10 0 0 0 0 1 0 0 0 0
+110	855573 68 0 1868 0 0.001172966252 3 0 1518 3036 4608648
+111	855641 68 0 1868 0 0.001172966252 3 0 3036 4554 11521620
+112	855709 88 0 1868 0 0.001172966252 3 0 0.000413072252 0.000703104504 2.5474739257254e-07
+113	855797 10 0 0 0 0 1 0 0 0 0
+114	855807 10 0 0 0 0 1 0 0 0 0
+115	855817 10 0 0 0 0 1 0 0 0 0
+116	855827 10 0 0 0 0 1 0 0 0 0
+117	855837 10 0 0 0 0 1 0 0 0 0
+118	855847 10 0 0 0 0 1 0 0 0 0
+119	855857 10 0 0 0 0 1 0 0 0 0
+120	855867 10 0 0 0 0 1 0 0 0 0
+121	855877 10 0 0 0 0 1 0 0 0 0
+122	855887 10 0 0 0 0 1 0 0 0 0
+123	855897 10 0 0 0 0 1 0 0 0 0
+124	855907 10 0 0 0 0 1 0 0 0 0
+125	855917 10 0 0 0 0 1 0 0 0 0
+126	855927 10 0 0 0 0 1 0 0 0 0
+127	855937 10 0 0 0 0 1 0 0 0 0
+128	855947 10 0 0 0 0 1 0 0 0 0
+129	855957 10 0 0 0 0 1 0 0 0 0
+130	855967 10 0 0 0 0 1 0 0 0 0
+131	855977 10 0 0 0 0 1 0 0 0 0
+132	855987 10 0 0 0 0 1 0 0 0 0
+133	855997 10 0 0 0 0 1 0 0 0 0
+134	856007 1494 0 71394 0 0.245550020365 51 0 1518 75900 115216200
+135	857501 1538 0 71394 0 0.245550020365 51 0 75900 1935450 98913107700
+136	859039 1984 0 71394 0 0.245550020365 51 0 0.000637764 0.027680768636 1.5335399423322e-05
+137	861023 10 0 0 0 0 1 0 0 0 0
+138	861033 10 0 0 0 0 1 0 0 0 0
+139	861043 10 0 0 0 0 1 0 0 0 0
+140	861053 10 0 0 0 0 1 0 0 0 0
+141	861063 10 0 0 0 0 1 0 0 0 0
+142	861073 10 0 0 0 0 1 0 0 0 0
+143	861083 10 0 0 0 0 1 0 0 0 0
+144	861093 10 0 0 0 0 1 0 0 0 0
+145	861103 10 0 0 0 0 1 0 0 0 0
+146	861113 10 0 0 0 0 1 0 0 0 0
+147	861123 10 0 0 0 0 1 0 0 0 0
+148	861133 10 0 0 0 0 1 0 0 0 0
+149	861143 10 0 0 0 0 1 0 0 0 0
+150	861153 10 0 0 0 0 1 0 0 0 0
+151	861163 10 0 0 0 0 1 0 0 0 0
+152	861173 10 0 0 0 0 1 0 0 0 0
+153	861183 10 0 0 0 0 1 0 0 0 0
+154	861193 10 0 0 0 0 1 0 0 0 0
+155	861203 77324 0 362188 0 1.272901904864 2527 0 1522 3844572 5851438584
+156	938527 102015 0 362188 0 1.272901904864 3054 0 3045522 6250844868 1.5938901564276e+16
+157	1040542 102303 0 362188 0 1.272901904864 2527 0 0.000488384303 1.015391219443 0.00040817036447036
+158	1142845 6320 0 361559 0 1.270549967836 206 0 1518 311190 472386420
+159	1149165 6811 0 361559 0 1.270549967836 211 0 305118 33473418 7073364472020
+160	1155976 8345 0 361559 0 1.270549967836 206 0 0.000551551505 0.112865964492 6.2140206496674e-05
+161	1164321 10 0 0 0 0 1 0 0 0 0
+162	1164331 10 0 0 0 0 1 0 0 0 0
+163	1164341 10 0 0 0 0 1 0 0 0 0
+164	1164351 10 0 0 0 0 1 0 0 0 0
+165	1164361 10 0 0 0 0 1 0 0 0 0
+166	1164371 10 0 0 0 0 1 0 0 0 0
+167	1164381 10 0 0 0 0 1 0 0 0 0
+168	1164391 10 0 0 0 0 1 0 0 0 0
+169	1164401 10 0 0 0 0 1 0 0 0 0
+170	1164411 10 0 0 0 0 1 0 0 0 0
+171	1164421 10 0 0 0 0 1 0 0 0 0
+172	1164431 10 0 0 0 0 1 0 0 0 0
+173	1164441 10 0 0 0 0 1 0 0 0 0
+174	1164451 10 0 0 0 0 1 0 0 0 0
+175	1164461 10 0 0 0 0 1 0 0 0 0
+176	1164471 10 0 0 0 0 1 0 0 0 0
+177	1164481 10 0 0 0 0 1 0 0 0 0
+178	1164491 10 0 0 0 0 1 0 0 0 0
+179	1164501 10 0 0 0 0 1 0 0 0 0
+180	1164511 10 0 0 0 0 1 0 0 0 0
+181	1164521 10 0 0 0 0 1 0 0 0 0
+182	1164531 6450 0 361347 0 1.27 256 0 1518 387090 587602620
+183	1170981 8423 0 361347 0 1.27 311 0 305118 63936642 16347692491020
+184	1179404 7108 0 361347 0 1.27 256 0 0.000300316967 0.033301496202 9.9909000546554e-06
+185	1186512 10 0 0 0 0 1 0 0 0 0
+186	1186522 10 0 0 0 0 1 0 0 0 0
+187	1186532 10 0 0 0 0 1 0 0 0 0
+188	1186542 10 0 0 0 0 1 0 0 0 0
+189	1186552 10 0 0 0 0 1 0 0 0 0
+190	1186562 10 0 0 0 0 1 0 0 0 0
+191	1186572 10 0 0 0 0 1 0 0 0 0
+192	1186582 10 0 0 0 0 1 0 0 0 0
+193	1186592 10 0 0 0 0 1 0 0 0 0
+194	1186602 10 0 0 0 0 1 0 0 0 0
+195	1186612 10 0 0 0 0 1 0 0 0 0
+196	1186622 10 0 0 0 0 1 0 0 0 0
+197	1186632 10 0 0 0 0 1 0 0 0 0
+198	1186642 10 0 0 0 0 1 0 0 0 0
+199	1186652 10 0 0 0 0 1 0 0 0 0
+200	1186662 10 0 0 0 0 1 0 0 0 0
+201	1186672 10 0 0 0 0 1 0 0 0 0
+202	1186682 10 0 0 0 0 1 0 0 0 0
+203	1186692 77354 0 362262 0 1.273149864816 2528 0 1522 3846094 5853755068
+204	1264046 102048 0 362262 0 1.273149864816 3055 0 3045522 6253887346 1.5948158236657e+16
+205	1366094 102343 0 362262 0 1.273149864816 2528 0 0.000150349337 0.379155052259 5.6889077325199e-05
+206	1468437 62 0 1385 0 0.000882934 3 0 1518 3036 4608648
+207	1468499 62 0 1385 0 0.000882934 3 0 3036 4554 11521620
+208	1468561 65 0 1385 0 0.000882934 3 0 0.00012304 0.00012304 1.51388416e-08
+209	1468626 10 0 0 0 0 1 0 0 0 0
+210	1468636 10 0 0 0 0 1 0 0 0 0
+211	1468646 10 0 0 0 0 1 0 0 0 0
+212	1468656 10 0 0 0 0 1 0 0 0 0
+213	1468666 10 0 0 0 0 1 0 0 0 0
+214	1468676 10 0 0 0 0 1 0 0 0 0
+215	1468686 10 0 0 0 0 1 0 0 0 0
+216	1468696 10 0 0 0 0 1 0 0 0 0
+217	1468706 10 0 0 0 0 1 0 0 0 0
+218	1468716 10 0 0 0 0 1 0 0 0 0
+219	1468726 10 0 0 0 0 1 0 0 0 0
+220	1468736 10 0 0 0 0 1 0 0 0 0
+221	1468746 10 0 0 0 0 1 0 0 0 0
+222	1468756 10 0 0 0 0 1 0 0 0 0
+223	1468766 10 0 0 0 0 1 0 0 0 0
+224	1468776 10 0 0 0 0 1 0 0 0 0
+225	1468786 10 0 0 0 0 1 0 0 0 0
+226	1468796 10 0 0 0 0 1 0 0 0 0
+227	1468806 10 0 0 0 0 1 0 0 0 0
+228	1468816 10 0 0 0 0 1 0 0 0 0
+229	1468826 10 0 0 0 0 1 0 0 0 0
+230	1468836 10 0 0 0 0 1 0 0 0 0
+231	1468846 10 0 0 0 0 1 0 0 0 0
+232	1468856 10 0 0 0 0 1 0 0 0 0
+233	1468866 10 0 0 0 0 1 0 0 0 0
+234	1468876 10 0 0 0 0 1 0 0 0 0
+235	1468886 10 0 0 0 0 1 0 0 0 0
+236	1468896 10 0 0 0 0 1 0 0 0 0
+237	1468906 10 0 0 0 0 1 0 0 0 0
+238	1468916 10 0 0 0 0 1 0 0 0 0
+239	1468926 10 0 0 0 0 1 0 0 0 0
+240	1468936 10 0 0 0 0 1 0 0 0 0
+241	1468946 10 0 0 0 0 1 0 0 0 0
+242	1468956 10 0 0 0 0 1 0 0 0 0
+243	1468966 10 0 0 0 0 1 0 0 0 0
+244	1468976 10 0 0 0 0 1 0 0 0 0
+245	1468986 10 0 0 0 0 1 0 0 0 0
+246	1468996 10 0 0 0 0 1 0 0 0 0
+247	1469006 10 0 0 0 0 1 0 0 0 0
+248	1469016 10 0 0 0 0 1 0 0 0 0
+249	1469026 10 0 0 0 0 1 0 0 0 0
+250	1469036 10 0 0 0 0 1 0 0 0 0
+251	1469046 10 0 0 0 0 1 0 0 0 0
+252	1469056 10 0 0 0 0 1 0 0 0 0
+253	1469066 10 0 0 0 0 1 0 0 0 0
+254	1469076 5387 12 361340 0 1.27 255 1500 1500 382500 573750000
+255	1474463 5642 12 361340 0 1.27 255 0.005 0.005 1.275 0.006375
+256	1480105 140562 114 362294 0 1.273375098803 5095 0 1 2547 2547
+257	1620667 140534 115 362270 0 1.273250082248 5094 0 1 2547 2547
+258	1761201 140544 117 362265 0 1.273249878419 5095 0 1 2547 2547
+259	1901745 140544 117 362265 0 1.273249878419 5095 0 1 2547 2547
+260	2042289 140544 117 362265 0 1.273249878419 5095 0 1 2547 2547
+261	2182833 140544 117 362265 0 1.273249878419 5095 0 1 2547 2547
+262	2323377 140544 117 362265 0 1.273249878419 5095 0 1 2547 2547
+263	2463921 140544 117 362265 0 1.273249878419 5095 0 1 2547 2547
+264	2604465 140544 117 362265 0 1.273249878419 5095 0 1 2547 2547
+265	2745009 140544 118 362266 0 1.273249878419 5095 0 1 2547 2547
+266	2885553 140544 118 362266 0 1.273249878419 5095 0 1 2547 2547
+267	3026097 140544 118 362266 0 1.273249878419 5095 0 1 2547 2547
+268	3166641 140544 118 362266 0 1.273249878419 5095 0 1 2547 2547
+269	3307185 140544 118 362266 0 1.273249878419 5095 0 1 2547 2547
+270	3447729 140544 118 362266 0 1.273249878419 5095 0 1 2547 2547
+271	3588273 140544 118 362266 0 1.273249878419 5095 0 1 2547 2547
+272	3728817 140544 119 362267 0 1.273249878419 5095 0 1 2547 2547
+273	3869361 140544 119 362267 0 1.273249878419 5095 0 1 2547 2547
+274	4009905 140544 119 362267 0 1.273249878419 5095 0 1 2547 2547
+275	4150449 140544 119 362267 0 1.273249878419 5095 0 1 2547 2547
+276	4290993 140544 119 362267 0 1.273249878419 5095 0 1 2547 2547
+277	4431537 140544 119 362267 0 1.273249878419 5095 0 1 2547 2547
+278	4572081 140544 119 362267 0 1.273249878419 5095 0 1 2547 2547
+279	4712625 140569 120 362285 0 1.273299894816 5095 0 1 2547 2547
+280	4853194 140558 120 362285 0 1.273299894816 5094 0 1 2547 2547
+281	4993752 140558 120 362285 0 1.273299894816 5094 0 1 2547 2547
+282	5134310 140558 120 362285 0 1.273299894816 5094 0 1 2547 2547
+283	5274868 140558 120 362285 0 1.273299894816 5094 0 1 2547 2547
+284	5415426 140558 120 362285 0 1.273299894816 5094 0 1 2547 2547
+285	5555984 140558 120 362285 0 1.273299894816 5094 0 1 2547 2547
+286	5696542 140558 120 362285 0 1.273299894816 5094 0 1 2547 2547
+287	5837100 61392 122 362201 0 1.273 2782 1518 1522 4233184 6441357688
+288	5898492 53046 122 362201 0 1.273 2782 0 0 0 0
+289	5951538 106092 122 362201 0 1.273 5564 0 1 2782 2782
+290	6057630 114438 122 362201 0 1.273 5564 0 1522 4233184 6441357688
+291	6172068 61392 122 362201 0 1.273 2782 1518 1522 4233184 6441357688
+292	6233460 53046 122 362201 0 1.273 2782 0 0 0 0
+293	6286506 955 123 4289 0 0.010313868303 40 0 0 0 0
+294	6287461 727 123 4289 0 0.010313868303 27 7504 12319 246694 2317808290
+295	6288188 693 123 4289 0 0.010313868303 26 7504 7504 195104 1464060416
+296	6288881 671 123 4289 0 0.010313868303 26 0 4815 44085 135795169
+297	6289552 929 125 4597 0 0.010483134303 40 0 0 0 0
+298	6290481 711 125 4597 0 0.010483134303 27 7504 12320 246720 2318286696
+299	6291192 678 125 4597 0 0.010483134303 26 7504 7504 195104 1464060416
+300	6291870 657 125 4597 0 0.010483134303 26 0 4816 44110 135883364
+301	6292527 12 128 128 0 0 1 1 1 1 1
+302	6292539 12 129 129 0 0 1 1 1 1 1
+303	6292551 5388 133 361345 0 1.27 255 1518 1518 387090 587602620
+304	6297939 4623 133 361345 0 1.27 255 0 0 0 0
+305	6302562 10298 133 361346 0 1.27 510 0 1 255 255
+306	6312860 11063 133 361346 0 1.27 510 0 1518 387090 587602620
+307	6323923 4623 133 361345 0 1.27 255 1 1 255 255
+308	6328546 673 134 4292 0 0.010313868303 27 28 576 5736 2791232
+309	6329219 774 135 72651 0 0.25000378 32 28 576 6040 2812648
+310	6329993 674 139 4294 0 0.010313868303 27 64 594 6326 3018956
+311	6330667 637 139 4294 0 0.010313868303 27 0 0 0 0
+312	6331304 1276 139 4295 0 0.010313868303 54 0 3 45 75
+313	6332580 1334 139 4295 0 0.010313868303 54 0 1714 16594 18725788
+314	6333914 637 139 4294 0 0.010313868303 27 1 3 36 60
+315	6334551 776 140 72654 0 0.25000378 32 64 594 6734 3054652
+316	6335327 733 140 72654 0 0.25000378 32 0 0 0 0
+317	6336060 1469 140 72662 0 0.250004452 64 0 3 50 80
+318	6337529 1533 140 72662 0 0.250004452 64 0 1714 17002 18761484
+319	6339062 733 140 72654 0 0.25000378 32 1 3 41 65
+320	6339795 676 145 4297 0 0.010313868303 27 64 594 6326 3018956
+321	6340471 779 146 72664 0 0.250004452 32 64 594 6734 3054652
+322	6341250 683 149 4300 0.000000576 0.010314444303 27 64 594 6326 3018956
+323	6341933 789 150 72673 0.000000576 0.25000538 32 64 594 6734 3054652
+324	6342722 684 151 4301 0.000000626 0.010314494303 27 64 594 6326 3018956
+325	6343406 684 151 4301 0.000000626 0.010314494303 27 64 594 6326 3018956
+326	6344090 790 152 72674 0.000000626 0.25000543 32 64 594 6734 3054652
+327	6344880 790 152 72674 0.000000626 0.25000543 32 64 594 6734 3054652
+328	6345670 1474 155 72676 0.000000626 0.25000543 59 64 594 13060 6073608
+329	6347144 815 156 72694 0.000000626 0.250007034 33 64 594 7034 3133828
+330	6347959 709 158 4253 0.000000626 0.010309002303 28 64 594 6522 3062652
+331	6348668 1478 163 72679 0.000001202 0.250006358 59 64 594 13060 6073608
+332	6350146 1477 164 72680 0.000001252 0.250006408 59 64 594 13060 6073608
+333	6351623 1477 164 72680 0.000001252 0.250006408 59 64 594 13060 6073608
+334	6353100 1474 165 72681 0.000001252 0.250006408 59 28 576 11776 5603880
+335	6354574 44 167 198 0.000001252 0.000001924 2 1 1 2 2
+336	6354618 1462 169 72687 0.000001252 0.250006408 59 28 576 12180 5708408
+337	6356080 1468 170 72688 0.000001252 0.250006408 59 64 594 13428 6188288
+338	6357548 712 171 4283 0.000001298 0.010313818303 28 64 594 6522 3062652
+339	6358260 812 172 72697 0.000001298 0.25000761 33 64 594 7034 3133828
+340	6359072 712 175 4284 0.000001348 0.010313868303 28 64 594 6522 3062652
+341	6359784 712 175 4284 0.000001348 0.010313868303 28 64 594 6522 3062652
+342	6360496 811 176 72698 0.000001348 0.25000766 33 64 594 7034 3133828
+343	6361307 811 176 72698 0.000001348 0.25000766 33 64 594 7034 3133828
+344	6362118 905 179 4286 0.000001348 0.010313868303 28 1.252e-06 2.0304e-05 0.000168664 2.39424832e-09
+345	6363023 744 179 4286 0.000001348 0.010313868303 28 64 6522 69078 284044508
+346	6363767 1037 180 72700 0.000001348 0.25000766 33 1.252e-06 2.0304e-05 0.000177684 2.415536336e-09
+347	6364804 852 180 72700 0.000001348 0.25000766 33 64 7034 98604 463783008
+348	6365656 709 181 4287 0.000001348 0.010313868303 28 28 576 5914 2828412
+349	6366365 808 182 72701 0.000001348 0.25000766 33 28 576 6322 2881564
+350	6367173 1476 189 72691 0.000001828 0.250006984 59 64 594 13428 6188288
+351	6368649 1478 191 72692 0.000001878 0.250007034 59 64 594 13428 6188288
+352	6370127 1478 191 72692 0.000001878 0.250007034 59 64 594 13428 6188288
+353	6371605 685 251 4310 0.000003756 0.010315120303 26 0 4665 56669 192731505
+354	6372290 681 251 4310 0.000003756 0.010315120303 26 0 4815 44085 135795169
+355	6372971 739 251 4135 0.000003756 0.010293564303 27 7505 12169 263943 2655379843
+356	6373710 430 251 4310 0.000003756 0.010315120303 16 7504 7504 120064 900960256
+357	6374140 888 251 4135 0.000003756 0.010293564303 37 0 0 0 0
+358	6375028 701 251 4135 0.000003756 0.010293564303 26 7504 7504 195104 1464060416
+359	6375729 686 251 4135 0.000003756 0.010293564303 26 1 4665 61334 214493730
+360	6376415 671 271 4618 0.000004428 0.010484386303 26 0 4675 56879 193866425
+361	6377086 668 271 4618 0.000004428 0.010484386303 26 0 4816 44110 135883364
+362	6377754 729 271 4452 0.000004428 0.010462830303 27 7505 12179 264163 2659909923
+363	6378483 421 271 4618 0.000004428 0.010484386303 16 7504 7504 120064 900960256
+364	6378904 872 271 4452 0.000004428 0.010462830303 37 0 0 0 0
+365	6379776 691 271 4452 0.000004428 0.010462830303 26 7504 7504 195104 1464060416
+366	6380467 676 271 4452 0.000004428 0.010462830303 26 1 4675 61554 215722050
+367	6381143 681 284 4289 0.000005008 0.010313868303 26 0 4341 39271 112610945
+368	6381824 691 284 4289 0.000005008 0.010313868303 26 1 4665 61334 214493730
+369	6382515 324 284 4161 0.000005008 0.010294316303 12 7504 7504 90048 675720192
+370	6382839 287 284 4033 0.000005008 0.010274052303 11 1 4197 19135 56520259
+371	6383126 408 284 4161 0.000005008 0.010294316303 16 0 1540 9064 10749824
+372	6383534 663 310 4597 0.00000568 0.010483134303 26 1 4342 39297 112689513
+373	6384197 672 310 4597 0.00000568 0.010483134303 26 1 4675 61554 215722050
+374	6384869 316 310 4478 0.00000568 0.010463582303 12 7504 7504 90048 675720192
+375	6385185 283 310 4350 0.00000568 0.010443318303 11 1 4207 19225 56903659
+376	6385468 399 310 4478 0.00000568 0.010463582303 16 0 1540 9074 10750804
+377	6385867 586 328 4310 0.000006292 0.010315120303 23 0 1602 14048 18539440
+378	6386453 405 328 4310 0.000006292 0.010315120303 15 1072 8576 72360 429507520
+379	6386858 603 328 4310 0.000006292 0.010315120303 25 0 0 0 0
+380	6387461 275 329 4444 0.000006292 0.010462330303 12 0 2 4 6
+381	6387736 295 341 4450 0.000006792 0.010462830303 12 0 8.12e-07 1.624e-06 1.006688e-12
+382	6388031 575 351 4618 0.00000698 0.010484386303 23 0 1602 14048 18539440
+383	6388606 396 351 4618 0.00000698 0.010484386303 15 1072 8576 72360 429507520
+384	6389002 589 351 4618 0.00000698 0.010484386303 25 0 0 0 0
+385	6389591 367 360 4135 0.000007292 0.010293564303 14 1 4341 24718 73815006
+386	6389958 161 371 4091 0.000007544 0.010285036303 5 2.536e-06 1.0984e-05 3.86e-05 3.78060608e-10
+387	6390119 168 371 4091 0.000007544 0.010285036303 5 3.17e-07 4.071997e-06 1.0096018e-05 3.0466505097342e-11
+388	6390287 178 371 4091 0.000007544 0.010285036303 5 0.38468508382 0.656250317 2.557236989233 1.3541066202855
+389	6390465 180 371 4091 0.000007544 0.010285036303 5 1.538744407277 2.625001585 10.22895805295 21.66574189282
+390	6390645 299 371 4161 0.000007544 0.010294316303 11 1072 6432 41272 186455104
+391	6390944 606 371 4289 0.000007544 0.010313868303 25 0 0 0 0
+392	6391550 158 387 4408 0.000008232 0.010454302303 5 2.552e-06 1.0984e-05 3.8984e-05 3.80567872e-10
+393	6391708 166 387 4408 0.000008232 0.010454302303 5 3.19e-07 4.103986e-06 1.0256097e-05 3.1187310937831e-11
+394	6391874 177 387 4408 0.000008232 0.010454302303 5 0.384685101933 0.656250319 2.557237118363 1.3541067499584
+395	6392051 178 387 4408 0.000008232 0.010454302303 5 1.538744511718 2.625001595 10.228958729549 21.66574459241
+396	6392229 292 387 4478 0.000008232 0.010463582303 11 1072 6432 41272 186455104
+397	6392521 588 387 4597 0.000008232 0.010483134303 25 0 0 0 0
+398	6393109 364 391 4452 0.000008292 0.010462830303 14 2 4342 24732 73864456
+399	6393473 158 452 4197 0.000010188 0.010297040303 5 2.536e-06 3.476e-06 1.586e-05 5.106584e-11
+400	6393631 166 452 4197 0.000010188 0.010297040303 5 3.62e-07 1.571914e-06 4.856597e-06 5.671524214461e-12
+401	6393797 178 452 4197 0.000010188 0.010297040303 5 0.384682911947 0.656250362 2.557232191698 1.3541025282573
+402	6393975 177 452 4197 0.000010188 0.010297040303 5 1.538733219702 2.62500181 10.228933623389 21.665658648755
+403	6394152 155 473 4514 0.000010876 0.010466306303 5 2.536e-06 3.476e-06 1.5548e-05 4.935608e-11
+404	6394307 164 473 4514 0.000010876 0.010466306303 5 3.23e-07 1.549054e-06 4.704627e-06 5.405963659301e-12
+405	6394471 176 473 4514 0.000010876 0.010466306303 5 0.384682902149 0.656250323 2.557232077392 1.35410240138
+406	6394647 176 473 4514 0.000010876 0.010466306303 5 1.53873315765 2.625001615 10.228933014195 21.665655974946
+407	6394823 44 487 525 0.000011472 0.000012436 2 0 1 1 1
+408	6394867 44 487 525 0.000011472 0.000012436 2 0 0 0 0
+409	6394911 43 514 538 0.00001216 0.000013124 2 0 1 1 1
+410	6394954 43 514 538 0.00001216 0.000013124 2 0 0 0 0
+411	6394997 199 525 4312 0.000012436 0.010317368303 8 0 9.64e-07 9.64e-07 9.29296e-13
+412	6395196 195 538 4620 0.000013124 0.010486634303 8 0 9.64e-07 9.64e-07 9.29296e-13
+413	6395391 140496 629 362232 0.00005 1.273049855919 5093 0 1 2546 2546
+414	6535887 140496 630 362233 0.00005 1.273049855919 5093 0 1 2546 2546
+415	6676383 140496 631 362234 0.00005 1.273049855919 5093 0 1 2546 2546
+416	6816879 140554 654 362294 0.00012504 1.273375098803 5094 0 1 2547 2547
+417	6957433 140554 654 362294 0.00012504 1.273375098803 5094 0 1 2547 2547
+418	7097987 140554 654 362294 0.00012504 1.273375098803 5094 0 1 2547 2547
+419	7238541 140554 654 362294 0.00012504 1.273375098803 5094 0 1 2547 2547
+420	7379095 140554 654 362294 0.00012504 1.273375098803 5094 0 1 2547 2547
+421	7519649 140554 654 362294 0.00012504 1.273375098803 5094 0 1 2547 2547
+422	7660203 140554 654 362294 0.00012504 1.273375098803 5094 0 1 2547 2547
+423	7800757 140526 655 362258 0.00012504 1.273125145678 5093 0 1 2546 2546
+424	7941283 140526 655 362258 0.00012504 1.273125145678 5093 0 1 2546 2546
+425	8081809 140526 655 362258 0.00012504 1.273125145678 5093 0 1 2546 2546
+426	8222335 140526 655 362258 0.00012504 1.273125145678 5093 0 1 2546 2546
+427	8362861 140526 655 362258 0.00012504 1.273125145678 5093 0 1 2546 2546
+428	8503387 140526 655 362258 0.00012504 1.273125145678 5093 0 1 2546 2546
+429	8643913 140526 655 362258 0.00012504 1.273125145678 5093 0 1 2546 2546
+430	8784439 83784 678 362263 0.0003 1.273149864816 2782 1518 1522 4233184 6441357688
+431	8868223 84580 703 362273 0.00042208 1.273272264816 2782 1518 1522 4233184 6441357688
+432	8952803 84580 704 362274 0.00042213 1.273272314816 2782 1518 1522 4233184 6441357688
+433	9037383 84580 704 362274 0.00042213 1.273272314816 2782 1518 1522 4233184 6441357688
+434	9121963 111527 706 362276 0.00042213 1.273272314816 2782 0.00012213 0.000422446967 0.753030848461 0.00020956263036738
+435	9233490 111769 706 362276 0.00042213 1.273272314816 3363 1518 3350640 7577242524 2.1256456706802e+16
+436	9345259 7237 981 361411 0.000468882 1.27012563 255 1518 1518 387090 587602620
+437	9352496 9196 981 361411 0.000468882 1.27012563 255 0.00012563 0.000468882 0.065380398202 2.2421562132894e-05
+438	9361692 13507 981 361468 0.000468882 1.270399450572 510 0 1 255 255
+439	9375199 14272 981 361468 0.000468882 1.270399450572 510 0 1518 387090 587602620
+440	9389471 6472 981 361411 0.000468882 1.27012563 255 1 1 255 255
+441	9395943 85144 984 362283 0.000468882 1.273275814816 2782 1518 1522 4233184 6441357688
+442	9481087 70216 990 362219 0.0005 1.273000195543 2546 1 1 2546 2546
+443	9551303 82615 991 362220 0.0005 1.273000195543 2546 -1.6e-11 1.6e-11 7.0000000000001e-11 1.89006e-19
+444	9633918 71316 992 362221 0.0005 1.273000195543 2546 -7 7 2 17888
+445	9705234 70249 993 362197 0.0005 1.272999993449 2546 1 1 2546 2546
+446	9775483 83100 994 362198 0.0005 1.272999993449 2546 -1.6e-11 1.6e-11 8.77e-10 2.35953e-19
+447	9858583 71326 995 362199 0.0005 1.272999993449 2546 -8 7 66 18512
+448	9929909 70260 996 362207 0.0005 1.273000074864 2546 1 1 2546 2546
+449	10000169 83409 997 362208 0.0005 1.273000074864 2546 -1.6e-11 1.6e-11 -9.93e-10 2.46205e-19
+450	10083578 71359 998 362209 0.0005 1.273000074864 2546 -7 7 -77 18853
+451	10154937 70252 1000 362191 0.0005 1.272999969153 2546 1 1 2546 2546
+452	10225189 84296 1001 362192 0.0005 1.272999969153 2546 -1.6e-11 1.6e-11 -1.0218e-08 2.87992e-19
+453	10309485 71457 1002 362193 0.0005 1.272999969153 2546 -8 7 -799 19655
+454	10380942 70230 1005 362212 0.0005 1.27300017033 2546 1 1 2546 2546
+455	10451172 84063 1006 362213 0.0005 1.27300017033 2546 -1.6e-11 1.6e-11 -8.946e-09 2.78182e-19
+456	10535235 71440 1007 362214 0.0005 1.27300017033 2546 -8 8 -698 20362
+457	10606675 85114 1036 362172 0.000590962 1.272898354864 2781 1518 1522 4231662 6439041204
+458	10691789 85114 1037 362173 0.000591012 1.272898404864 2781 1518 1522 4231662 6439041204
+459	10776903 85114 1037 362173 0.000591012 1.272898404864 2781 1518 1522 4231662 6439041204
+460	10862017 112615 1039 362175 0.000591012 1.272898404864 2781 0.000398134813 0.000591012 1.14249106512 0.00047361717517841
+461	10974632 112412 1039 362175 0.000591012 1.272898404864 3362 1518 3349122 7573875650 2.1245119514596e+16
+462	11087044 1487 1317 71366 0.000637764 0.245525080616 50 1518 1518 75900 115216200
+463	11088531 1980 1317 71366 0.000637764 0.245525080616 50 0.000524787437 0.000637764 0.027036167551 1.4637843651589e-05
+464	11090511 2671 1317 71380 0.000637764 0.245550020365 100 0 1 50 50
+465	11093182 2821 1317 71380 0.000637764 0.245550020365 100 0 1518 75900 115216200
+466	11096003 1337 1317 71366 0.000637764 0.245525080616 50 1 1 50 50
+467	11097340 78799 1320 362189 0.000637764 1.272901904864 2576 1518 1522 3920472 5966654784
+468	11176139 78799 1333 362222 0.000759844 1.273024304864 2576 1518 1522 3920472 5966654784
+469	11254938 78799 1334 362223 0.000759894 1.273024354864 2576 1518 1522 3920472 5966654784
+470	11333737 78799 1334 362223 0.000759894 1.273024354864 2576 1518 1522 3920472 5966654784
+471	11412536 104268 1336 362225 0.000759894 1.273024354864 2576 0.000524084813 0.000759894 1.358487188079 0.0007175570152423
+472	11516804 105309 1336 362225 0.000759894 1.273024354864 3152 1518 3118386 6589978308 1.7088991401264e+16
+473	11622113 78799 1338 362227 0.000759894 1.273024354864 2576 1518 1522 3920472 5966654784
+474	11700912 104268 1338 362227 0.000759894 1.273024354864 2576 0.000524084813 0.000759894 1.358487188079 0.0007175570152423
+475	11805180 142142 1338 362227 0.000759894 1.273024354864 5152 0 1 2576 2576
+476	11947322 149870 1338 362227 0.000759894 1.273024354864 5152 0 1522 3920472 5966654784
+477	12097192 78799 1338 362227 0.000759894 1.273024354864 2576 1518 1522 3920472 5966654784
+478	12175991 104268 1338 362227 0.000759894 1.273024354864 2576 0.000524084813 0.000759894 1.358487188079 0.0007175570152423
+479	12280259 78799 1339 362228 0.000759894 1.273024354864 2576 1518 1522 3920472 5966654784
+480	12359058 105309 1339 362228 0.000759894 1.273024354864 3152 1518 3118386 6589978308 1.7088991401264e+16
+481	12464367 104268 1339 362228 0.000759894 1.273024354864 2576 0.000524084813 0.000759894 1.358487188079 0.0007175570152423
+482	12568635 104268 1339 362228 0.000759894 1.273024354864 2576 0.000524084813 0.000759894 1.358487188079 0.0007175570152423
+483	12672903 78799 1340 362229 0.000759894 1.273024354864 2576 1518 1522 3920472 5966654784
+484	12751702 105309 1340 362229 0.000759894 1.273024354864 3152 1518 3118386 6589978308 1.7088991401264e+16
+485	12857011 104268 1340 362229 0.000759894 1.273024354864 2576 0.000524084813 0.000759894 1.358487188079 0.0007175570152423
+486	12961279 104268 1340 362229 0.000759894 1.273024354864 2576 0.000524084813 0.000759894 1.358487188079 0.0007175570152423
+487	13065547 52 1341 1342 0.000759894 0.000759894 2 1518 1518 3036 4608648
+488	13065599 46 1341 1342 0.000759894 0.000759894 2 0 0 0 0
+489	13065645 92 1341 1342 0.000759894 0.000759894 4 0 1 2 2
+490	13065737 98 1341 1342 0.000759894 0.000759894 4 0 1518 3036 4608648
+491	13065835 52 1341 1342 0.000759894 0.000759894 2 1518 1518 3036 4608648
+492	13065887 46 1341 1342 0.000759894 0.000759894 2 0 0 0 0
+493	13065933 52 1347 1348 0.000759894 0.000759894 2 1518 1518 3036 4608648
+494	13065985 46 1347 1348 0.000759894 0.000759894 2 0 0 0 0
+495	13066031 92 1347 1384 0.000759894 0.000882934 4 0 2 4 6
+496	13066123 101 1347 1384 0.000759894 0.000882934 4 0 3036 6072 13825944
+497	13066224 46 1347 1348 0.000759894 0.000759894 2 1 2 3 5
+498	13066270 52 1352 1386 0.000759894 0.000882934 2 1518 1518 3036 4608648
+499	13066322 52 1380 1781 0.000881974 0.001005014 2 1518 1518 3036 4608648
+500	13066374 52 1381 1784 0.000882024 0.001005064 2 1518 1518 3036 4608648
+501	13066426 52 1381 1784 0.000882024 0.001005064 2 1518 1518 3036 4608648
+502	13066478 64 1383 1786 0.000882024 0.001005064 2 0.00012213 0.00024517 0.0003673 7.50240658e-08
+503	13066542 52 1383 1786 0.000882024 0.001005064 2 1518 3036 4554 11521620
+504	13066594 52 1667 1828 0.000928776 0.001008564 2 1518 1518 3036 4608648
+505	13066646 65 1667 1828 0.000928776 0.001008564 2 0.000168882 0.00024867 0.000417552 9.0357898824e-08
+506	13066711 98 1667 1867 0.000928776 0.001172966252 4 0 2 4 6
+507	13066809 107 1667 1867 0.000928776 0.001172966252 4 0 3036 6072 13825944
+508	13066916 46 1667 1828 0.000928776 0.001008564 2 1 2 3 5
+509	13066962 151 1675 72683 0.001 0.250006408 7 0 0 0 0
+510	13067113 145 1675 72683 0.001 0.250006408 6 7504 7845 46449 359658141
+511	13067258 119 1675 72683 0.001 0.250006408 5 7504 7504 37520 281550080
+512	13067377 112 1675 72683 0.001 0.250006408 5 0 341 1174 348644
+513	13067489 122 1715 72703 0.001001252 0.25000766 5 250 455 1538 501888
+514	13067611 120 1715 72703 0.001001252 0.25000766 5 0 341 1174 348644
+515	13067731 152 1715 72647 0.001001252 0.25000378 6 7755 7959 47018 368495462
+516	13067883 101 1715 72703 0.001001252 0.25000766 4 7504 7504 30016 225240064
+517	13067984 155 1715 72647 0.001001252 0.25000378 7 0 0 0 0
+518	13068139 126 1715 72647 0.001001252 0.25000378 5 7504 7504 37520 281550080
+519	13068265 121 1715 72647 0.001001252 0.25000378 5 251 455 1743 646413
+520	13068386 127 1735 72683 0.001002504 0.250006408 5 250 291 1334 357864
+521	13068513 127 1735 72683 0.001002504 0.250006408 5 251 455 1743 646413
+522	13068640 79 1735 72671 0.001002504 0.250005032 3 7504 7504 22512 168930048
+523	13068719 44 1735 72601 0.001002504 0.25 2 251 291 542 147682
+524	13068763 90 1735 72671 0.001002504 0.250005032 4 0 164 204 28496
+525	13068853 112 1754 72703 0.0010043 0.25000766 5 0 50 90 4100
+526	13068965 75 1754 72703 0.0010043 0.25000766 3 1072 2144 4824 8331584
+527	13069040 89 1754 72703 0.0010043 0.25000766 4 0 0 0 0
+528	13069129 65 1755 72639 0.0010043 0.25000378 3 0 1 1 1
+529	13069194 65 1758 72641 0.0010043 0.25000378 3 0 0 0 0
+530	13069259 48 1762 72647 0.0010043 0.25000378 2 251 291 542 147682
+531	13069307 63 1791 72671 0.001005552 0.250005032 2 3.048e-06 5.032e-06 8.08e-06 3.4611328e-11
+532	13069370 64 1791 72671 0.001005552 0.250005032 2 3.81e-07 9.62375e-07 1.343375e-06 1.071326640625e-12
+533	13069434 69 1791 72671 0.001005552 0.250005032 2 0.57421966475 0.656250381 1.23047004575 0.76039278594825
+534	13069503 70 1791 72671 0.001005552 0.250005032 2 2.296879621375 2.625001905 4.921881526375 12.166290996341
+535	13069573 53 1791 72671 0.001005552 0.250005032 2 1072 1608 2680 3734848
+536	13069626 94 1791 72683 0.001005552 0.250006408 4 0 0 0 0
+537	13069720 59 1825 72703 0.00100802 0.25000766 2 3.72e-06 3.88e-06 7.6e-06 2.88928e-11
+538	13069779 62 1825 72703 0.00100802 0.25000766 2 4.65e-07 8.91875e-07 1.356875e-06 1.011666015625e-12
+539	13069841 67 1825 72703 0.00100802 0.25000766 2 0.57421958375 0.656250465 1.23047004875 0.76039280317474
+540	13069908 68 1825 72703 0.00100802 0.25000766 2 2.296879226875 2.625002325 4.921881551875 12.166291389105
+541	13069976 58 1856 1869 0.001049926252 0.001172966252 2 1518 1518 3036 4608648
+542	13070034 58 1863 2154 0.001172006252 0.001295046252 2 1518 1518 3036 4608648
+543	13070092 58 1864 2155 0.001172056252 0.001295096252 2 1518 1518 3036 4608648
+544	13070150 58 1864 2155 0.001172056252 0.001295096252 2 1518 1518 3036 4608648
+545	13070208 78 1866 2157 0.001172056252 0.001295096252 2 0.000412162252 0.000535202252 0.000947364504 4.5631917251958e-07
+546	13070286 58 1866 2157 0.001172056252 0.001295096252 2 1518 3036 4554 11521620
+547	13070344 58 2143 2161 0.001218808252 0.001298596252 2 1518 1518 3036 4608648
+548	13070402 78 2143 2161 0.001218808252 0.001298596252 2 0.000458914252 0.000538702252 0.000997616504 5.0080240699859e-07
+549	13070480 104 2143 2204 0.001218808252 0.001498200929 4 0 2 4 6
+550	13070584 113 2143 2204 0.001218808252 0.001498200929 4 0 3036 6072 13825944
+551	13070697 52 2143 2161 0.001218808252 0.001298596252 2 1 2 3 5
+552	13070749 58 2190 2206 0.001375160929 0.001498200929 2 1518 1518 3036 4608648
+553	13070807 58 2198 2258 0.001497240929 0.001620280929 2 1518 1518 3036 4608648
+554	13070865 58 2199 2259 0.001497290929 0.001620330929 2 1518 1518 3036 4608648
+555	13070923 58 2199 2259 0.001497290929 0.001620330929 2 1518 1518 3036 4608648
+556	13070981 78 2201 2261 0.001497290929 0.001620330929 2 0.000737396929 0.000860436929 0.001597833858 1.2841059396856e-06
+557	13071059 58 2201 2261 0.001497290929 0.001620330929 2 1518 3036 4554 11521620
+558	13071117 58 2203 2263 0.001497290929 0.001620330929 2 1518 1518 3036 4608648
+559	13071175 78 2203 2263 0.001497290929 0.001620330929 2 0.000737396929 0.000860436929 0.001597833858 1.2841059396856e-06
+560	13071253 52 2203 2263 0.001497290929 0.001620330929 2 1 2 3 5
+561	13071305 58 2203 2263 0.001497290929 0.001620330929 2 1518 3036 4554 11521620
+562	13071363 56004 3942 362200 0.01 1.273 2527 1500 1500 3790500 5685750000
+563	13127367 56004 3942 362200 0.01 1.273 2527 1522 1522 3846094 5853755068
+564	13183371 76241 3942 362200 0.01 1.273 3053 1522 3045522 6251656094 1.5943839383887e+16
+565	13259612 56004 3954 362204 0.01 1.273 2527 1522 1522 3846094 5853755068
+566	13315616 48423 3954 362204 0.01 1.273 2527 0 0 0 0
+567	13364039 118186 3954 362261 0.01 1.273149864816 5054 0 1 2527 2527
+568	13482225 125767 3954 362261 0.01 1.273149864816 5054 0 1522 3846094 5853755068
+569	13607992 48423 3954 362204 0.01 1.273 2527 1 1 2527 2527
+570	13656415 77344 4314 362280 0.010319118303 1.273275814816 2527 1522 1522 3846094 5853755068
+571	13733759 102333 4314 362280 0.010319118303 1.273275814816 2527 0.000275684813 0.000319118303 0.697474018259 0.00019251082268771
+572	13836092 139526 4314 362281 0.010319118303 1.273275814816 5054 0 1 2527 2527
+573	13975618 147107 4314 362281 0.010319118303 1.273275814816 5054 0 1522 3846094 5853755068
+574	14122725 69763 4314 362280 0.010319118303 1.273275814816 2527 1 1 2527 2527
+575	14192488 77314 4622 362186 0.010488384303 1.272901904864 2526 1522 1522 3844572 5851438584
+576	14269802 102293 4622 362186 0.010488384303 1.272901904864 2526 0.000401634813 0.000488384303 1.015391219443 0.00040817036447036
+577	14372095 139472 4622 362187 0.010488384303 1.272901904864 5052 0 1 2526 2526
+578	14511567 147050 4622 362187 0.010488384303 1.272901904864 5052 0 1522 3844572 5851438584
+579	14658617 69736 4622 362186 0.010488384303 1.272901904864 2526 1 1 2526 2526
+580	14728353 77315 4698 362228 0.010610834303 1.273024354864 2526 1522 1522 3844572 5851438584
+581	14805668 101985 4698 362228 0.010610834303 1.273024354864 3052 1522 3045522 6247831308 1.5929820020403e+16
+582	14907653 102294 4698 362228 0.010610834303 1.273024354864 2526 0.000524084813 0.000610834303 1.324699919443 0.00069471452442695
+583	15009947 102294 4698 362228 0.010610834303 1.273024354864 2526 0.000524084813 0.000610834303 1.324699919443 0.00069471452442695
+584	15112241 23 72643 72643 0.25000378 0.25000378 1 1 1 1 1
+585	15112264 23 72643 72643 0.25000378 0.25000378 1 1 1 1 1
+586	15112287 23 72643 72643 0.25000378 0.25000378 1 1 1 1 1
+587	15112310 23 72643 72643 0.25000378 0.25000378 1 1 1 1 1
+588	15112333 6314 72897 361531 0.250551247286 1.270525080572 205 1518 1518 311190 472386420
+589	15118647 8343 72897 361531 0.250551247286 1.270525080572 205 0.000524680963 0.000551551505 0.109883746126 5.8934203596933e-05
+590	15126990 11394 72897 361552 0.250551247286 1.270549967836 410 0 1 205 205
+591	15138384 12009 72897 361552 0.250551247286 1.270549967836 410 0 1518 311190 472386420
+592	15150393 5699 72897 361531 0.250551247286 1.270525080572 205 1 1 205 205
+593	15156092 6310 72900 361560 0.250551247286 1.270549967836 205 1518 1518 311190 472386420
+594	15162402 6310 72909 361569 0.250673327286 1.270672047836 205 1518 1518 311190 472386420
+595	15168712 6310 72910 361570 0.250673377286 1.270672097836 205 1518 1518 311190 472386420
+596	15175022 6310 72910 361570 0.250673377286 1.270672097836 205 1518 1518 311190 472386420
+597	15181332 8335 72912 361572 0.250673377286 1.270672097836 205 0.000671906193 0.000673681505 0.137902614492 9.276657304799e-05
+598	15189667 6781 72912 361572 0.250673377286 1.270672097836 209 1518 305118 33245718 7021517182020
+599	15196448 18 284938 284938 1 1 1 1522 1522 1522 2316484
+600	15196466 18 284938 284938 1 1 1 1518 1518 1518 2304324
+601	15196484 21 284938 284938 1 1 1 3017322 3017322 3017322 9104232051684
+602	15196505 18 284941 284941 1 1 1 1518 1518 1518 2304324
+603	15196523 18 284941 284941 1 1 1 1518 1518 1518 2304324
+604	15196541 20 284941 284941 1 1 1 305118 305118 305118 93096993924
+605	15196561 18 284946 284946 1 1 1 1522 1522 1522 2316484
+606	15196579 18 284946 284946 1 1 1 1522 1522 1522 2316484
+607	15196597 21 284946 284946 1 1 1 3015082 3015082 3015082 9090719466724
+608	15196618 18 284958 284958 1 1 1 1522 1522 1522 2316484
+609	15196636 18 284958 284958 1 1 1 1518 1518 1518 2304324
+610	15196654 21 284958 284958 1 1 1 3087938 3087938 3087938 9535361091844
+611	15196675 18 284960 284960 1 1 1 1522 1522 1522 2316484
+612	15196693 18 284960 284960 1 1 1 1518 1518 1518 2304324
+613	15196711 21 284960 284960 1 1 1 3087938 3087938 3087938 9535361091844
+614	15196732 18 285009 285009 1 1 1 1522 1522 1522 2316484
+615	15196750 18 285009 285009 1 1 1 1518 1518 1518 2304324
+616	15196768 21 285009 285009 1 1 1 3317160 3317160 3317160 11003550465600
+617	15196789 18 285013 285013 1 1 1 1522 1522 1522 2316484
+618	15196807 18 285013 285013 1 1 1 1522 1522 1522 2316484
+619	15196825 21 285013 285013 1 1 1 3013560 3013560 3013560 9081543873600
+620	15196846 18 285048 285048 1 1 1 1522 1522 1522 2316484
+621	15196864 18 285048 285048 1 1 1 1518 1518 1518 2304324
+622	15196882 21 285048 285048 1 1 1 3317160 3317160 3317160 11003550465600
+623	15196903 18 285059 285059 1 1 1 1522 1522 1522 2316484
+624	15196921 18 285059 285059 1 1 1 1522 1522 1522 2316484
+625	15196939 21 285059 285059 1 1 1 3013560 3013560 3013560 9081543873600
+626	15196960 18 285070 285070 1 1 1 1518 1518 1518 2304324
+627	15196978 18 285070 285070 1 1 1 1518 1518 1518 2304324
+628	15196996 20 285070 285070 1 1 1 303600 303600 303600 92172960000
+629	15197016 18 285147 285147 1 1 1 1518 1518 1518 2304324
+630	15197034 18 285147 285147 1 1 1 1518 1518 1518 2304324
+631	15197052 20 285147 285147 1 1 1 227700 227700 227700 51847290000
+632	15197072 18 285162 285162 1 1 1 1518 1518 1518 2304324
+633	15197090 18 285162 285162 1 1 1 1518 1518 1518 2304324
+634	15197108 20 285162 285162 1 1 1 227700 227700 227700 51847290000
+5	15197128 127098 362421 678104 1.273398214816 2.389276078985 4910 0 1 2455 2455
+9	15324226 115559 362327 678010 1.273024304864 2.38890195336 4464 0 1 2232 2232
+10	15439785 11986 362975 677105 1.270672047836 2.385551055307 446 0 1 223 223
+11	15451771 130311 362401 678084 1.273272264816 2.389150128985 4910 0 1 2455 2455
+38	15582082 6662 362884 677027 1.275399162874 2.385425425307 223 1518 1518 338514 513864252
+39	15588744 14219 362884 677027 1.275399162874 2.385425425307 446 302082 305118 135407118 41110575753852
+40	15602963 8864 362884 677027 1.275399162874 2.385425425307 223 0.000399065362 0.000425924023 0.091576631203 3.7644522773483e-05
+59	15611827 66707 362420 678103 1.273775914816 2.389276078985 2232 1522 1522 3397104 5170392288
+60	15678534 146842 362420 678103 1.27327593199 2.389276078985 4465 3042478 3045522 13591487396 4.1372576197239e+16
+61	15825376 88774 362420 678103 1.273775914816 2.389276078985 2232 0.000275685353 0.000276289808 0.615989088429 0.00017000119538807
+155	15914150 68939 362326 678009 1.273401764816 2.38890195336 2232 1522 1522 3397104 5170392288
+156	15983089 151239 362326 678009 1.273401764816 2.38890195336 4463 3042478 3045522 13585402440 4.1354062857111e+16
+157	16134328 91006 362326 678009 1.273401764816 2.38890195336 2232 0.000401635353 0.000402239808 0.89710922426 0.00036057574880593
+158	16225334 6885 362974 677104 1.27554987275 2.385551055307 223 1518 1518 338514 513864252
+159	16232219 14694 362974 677104 1.270550288953 2.385551055307 447 302082 305118 135701610 41197218336252
+160	16246913 9087 362974 677104 1.27554987275 2.385551055307 223 0.000549768415 0.000551554023 0.12277773993 6.7598175874867e-05
+182	16256000 5684 362763 676981 1.275 2.385299795307 223 1518 1518 338514 513864252
+183	16261684 12280 362763 676981 1.27 2.385299795307 447 302082 305118 135823050 41270956704252
+184	16273964 6247 362763 676981 1.275 2.385299795307 223 0 0.000300294023 0.02880181574 8.6410914908666e-06
+203	16280211 68939 362400 678083 1.273649964816 2.389150128985 2232 1522 1522 3397104 5170392288
+204	16349150 151307 362400 678083 1.27314998199 2.389150128985 4465 3042478 3045522 13591487396 4.1372576197239e+16
+205	16500457 91006 362400 678083 1.273649964816 2.389150128985 2232 0.000149735353 0.000150339808 0.334868688429 5.0240658392805e-05
+254	16591463 4782 362756 676894 1.275 2.385 223 1500 1500 334500 501750000
+255	16596245 5005 362756 676894 1.275 2.385 223 0.005 0.005 1.115 0.005575
+256	16601250 124518 362403 678115 1.273750157849 2.389375267522 4464 0 1 2232 2232
+257	16725768 124546 362295 678116 1.273375098803 2.389375267522 4465 0 1 2232 2232
+258	16850314 124459 362370 678086 1.273550149684 2.389249954804 4464 0 1 2232 2232
+259	16974773 124459 362370 678086 1.273550149684 2.389249954804 4464 0 1 2232 2232
+260	17099232 124459 362370 678086 1.273550149684 2.389249954804 4464 0 1 2232 2232
+261	17223691 124459 362370 678086 1.273550149684 2.389249954804 4464 0 1 2232 2232
+262	17348150 124459 362370 678086 1.273550149684 2.389249954804 4464 0 1 2232 2232
+263	17472609 124459 362370 678086 1.273550149684 2.389249954804 4464 0 1 2232 2232
+264	17597068 124459 362370 678086 1.273550149684 2.389249954804 4464 0 1 2232 2232
+265	17721527 124459 362371 678087 1.273550149684 2.389249954804 4464 0 1 2232 2232
+266	17845986 124459 362371 678087 1.273550149684 2.389249954804 4464 0 1 2232 2232
+267	17970445 124459 362371 678087 1.273550149684 2.389249954804 4464 0 1 2232 2232
+268	18094904 124459 362371 678087 1.273550149684 2.389249954804 4464 0 1 2232 2232
+269	18219363 124459 362371 678087 1.273550149684 2.389249954804 4464 0 1 2232 2232
+270	18343822 124459 362371 678087 1.273550149684 2.389249954804 4464 0 1 2232 2232
+271	18468281 124459 362371 678087 1.273550149684 2.389249954804 4464 0 1 2232 2232
+272	18592740 124459 362372 678088 1.273550149684 2.389249954804 4464 0 1 2232 2232
+273	18717199 124459 362372 678088 1.273550149684 2.389249954804 4464 0 1 2232 2232
+274	18841658 124459 362372 678088 1.273550149684 2.389249954804 4464 0 1 2232 2232
+275	18966117 124459 362372 678088 1.273550149684 2.389249954804 4464 0 1 2232 2232
+276	19090576 124459 362372 678088 1.273550149684 2.389249954804 4464 0 1 2232 2232
+277	19215035 124459 362372 678088 1.273550149684 2.389249954804 4464 0 1 2232 2232
+278	19339494 124459 362372 678088 1.273550149684 2.389249954804 4464 0 1 2232 2232
+279	19463953 124507 362398 678106 1.273649964816 2.389300128985 4464 0 1 2232 2232
+280	19588460 124527 362339 678106 1.273499934816 2.389300128985 4464 0 1 2232 2232
+281	19712987 124527 362339 678106 1.273499934816 2.389300128985 4464 0 1 2232 2232
+282	19837514 124527 362339 678106 1.273499934816 2.389300128985 4464 0 1 2232 2232
+283	19962041 124527 362339 678106 1.273499934816 2.389300128985 4464 0 1 2232 2232
+284	20086568 124527 362339 678106 1.273499934816 2.389300128985 4464 0 1 2232 2232
+285	20211095 124527 362339 678106 1.273499934816 2.389300128985 4464 0 1 2232 2232
+286	20335622 124527 362339 678106 1.273499934816 2.389300128985 4464 0 1 2232 2232
+287	20460149 54878 362341 678027 1.2735 2.389 2455 1518 1522 3735618 5684256540
+288	20515027 47513 362341 678027 1.2735 2.389 2455 0 0 0 0
+289	20562540 95026 362341 678027 1.2735 2.389 4910 0 1 2455 2455
+290	20657566 102391 362341 678027 1.2735 2.389 4910 0 1522 3735618 5684256540
+291	20759957 54878 362341 678027 1.2735 2.389 2455 1518 1522 3735618 5684256540
+292	20814835 47513 362341 678027 1.2735 2.389 2455 0 0 0 0
+303	20862348 4782 362761 676899 1.275 2.385 223 1518 1518 338514 513864252
+304	20867130 4113 362761 676899 1.275 2.385 223 0 0 0 0
+305	20871243 9128 362761 676974 1.275 2.385299795307 446 0 1 223 223
+306	20880371 9797 362761 676974 1.275 2.385299795307 446 0 1518 338514 513864252
+307	20890168 4113 362761 676899 1.275 2.385 223 1 1 223 223
+413	20894281 124537 362316 678137 1.273399895294 2.389399926679 4465 0 1 2233 2233
+414	21018818 124537 362317 678138 1.273399895294 2.389399926679 4465 0 1 2233 2233
+415	21143355 124537 362318 678139 1.273399895294 2.389399926679 4465 0 1 2233 2233
+416	21267892 124478 362395 678115 1.273625216593 2.389375267522 4464 0 1 2232 2232
+417	21392370 124478 362395 678115 1.273625216593 2.389375267522 4464 0 1 2232 2232
+418	21516848 124478 362395 678115 1.273625216593 2.389375267522 4464 0 1 2232 2232
+419	21641326 124478 362395 678115 1.273625216593 2.389375267522 4464 0 1 2232 2232
+420	21765804 124478 362395 678115 1.273625216593 2.389375267522 4464 0 1 2232 2232
+421	21890282 124478 362395 678115 1.273625216593 2.389375267522 4464 0 1 2232 2232
+422	22014760 124478 362395 678115 1.273625216593 2.389375267522 4464 0 1 2232 2232
+423	22139238 124506 362295 678116 1.273375098803 2.389375267522 4465 0 1 2233 2233
+424	22263744 124506 362295 678116 1.273375098803 2.389375267522 4465 0 1 2233 2233
+425	22388250 124506 362295 678116 1.273375098803 2.389375267522 4465 0 1 2233 2233
+426	22512756 124506 362295 678116 1.273375098803 2.389375267522 4465 0 1 2233 2233
+427	22637262 124506 362295 678116 1.273375098803 2.389375267522 4465 0 1 2233 2233
+428	22761768 124506 362295 678116 1.273375098803 2.389375267522 4465 0 1 2233 2233
+429	22886274 124506 362295 678116 1.273375098803 2.389375267522 4465 0 1 2233 2233
+430	23010780 74623 362401 678084 1.273649964816 2.389150128985 2455 1518 1522 3735618 5684256540
+431	23085403 75328 362411 678094 1.273772364816 2.389272528985 2455 1518 1522 3735618 5684256540
+432	23160731 75328 362412 678095 1.273772414816 2.389272578985 2455 1518 1522 3735618 5684256540
+433	23236059 75328 362412 678095 1.273772414816 2.389272578985 2455 1518 1522 3735618 5684256540
+434	23311387 99101 362414 678097 1.273772414816 2.389272578985 2455 0.00012213 0.000422424023 0.664213894169 0.00018471904610129
+435	23410488 165421 362414 678097 1.27327243199 2.389272578985 4911 3344560 3350640 16440198774 5.5035668051032e+16
+436	23575909 6389 362826 677025 1.27512563 2.385425425307 223 1518 1518 338514 513864252
+437	23582298 8095 362826 677025 1.27512563 2.385425425307 223 0.00012563 0.000425924023 0.05681730574 1.9397421722399e-05
+438	23590393 11936 362826 677026 1.27512563 2.385425425307 446 0 1 223 223
+439	23602329 12605 362826 677026 1.27512563 2.385425425307 446 0 1518 338514 513864252
+440	23614934 5720 362826 677025 1.27512563 2.385425425307 223 1 1 223 223
+441	23620654 75824 362421 678104 1.273775914816 2.389276078985 2455 1518 1522 3735618 5684256540
+442	23696478 62281 362357 678023 1.273500263041 2.388999943852 2232 1 1 2232 2232
+443	23758759 73695 362358 678024 1.273500263041 2.388999943852 2232 -1.6e-11 1.6e-11 5.198e-09 2.36298e-19
+444	23832454 63193 362359 678025 1.273500263041 2.388999943852 2232 -8 7 408 17940
+445	23895647 62241 362353 678019 1.273500183425 2.388999786558 2232 1 1 2232 2232
+446	23957888 73593 362354 678020 1.273500183425 2.388999786558 2232 -1.6e-11 1.6e-11 4.176e-09 2.21694e-19
+447	24031481 63156 362355 678021 1.273500183425 2.388999786558 2232 -8 7 330 16950
+448	24094637 62263 362336 678033 1.273499934816 2.389000048985 2232 1 1 2232 2232
+449	24156900 73732 362337 678034 1.273499934816 2.389000048985 2232 -1.6e-11 1.6e-11 -1.976e-09 2.0828e-19
+450	24230632 63262 362338 678035 1.273499934816 2.389000048985 2232 -8 7 -157 16803
+451	24293894 62247 362347 678038 1.273500035373 2.389000250962 2232 1 1 2232 2232
+452	24356141 73600 362348 678039 1.273500035373 2.389000250962 2232 -1.6e-11 1.6e-11 -9.5999999999995e-11 2.05996e-19
+453	24429741 63192 362349 678040 1.273500035373 2.389000250962 2232 -7 7 -10 16278
+454	24492933 62269 362329 678012 1.273499906544 2.388999761724 2232 1 1 2232 2232
+455	24555202 73785 362330 678013 1.273499906544 2.388999761724 2232 -1.6e-11 1.6e-11 -2.57e-09 2.07186e-19
+456	24628987 63283 362331 678014 1.273499906544 2.388999761724 2232 -7 7 -201 16715
+457	24692270 75855 362310 678131 1.273398214816 2.389398478985 2456 1518 1522 3737140 5686573024
+458	24768125 75855 362311 678132 1.273398264816 2.389398528985 2456 1518 1522 3737140 5686573024
+459	24843980 75855 362311 678132 1.273398264816 2.389398528985 2456 1518 1522 3737140 5686573024
+460	24919835 100134 362313 678134 1.273398264816 2.389398528985 2456 0.000398135353 0.000548054023 1.008507374448 0.00041782139162782
+461	25019969 166452 362313 678134 1.273398264816 2.389398528985 4912 3346078 3349122 16443441636 5.5046172794797e+16
+467	25186421 68939 362327 678010 1.273401764816 2.38890195336 2232 1522 1522 3397104 5170392288
+468	25255360 68939 362360 678043 1.273524164816 2.38902435336 2232 1522 1522 3397104 5170392288
+469	25324299 68939 362361 678044 1.273524214816 2.38902440336 2232 1522 1522 3397104 5170392288
+470	25393238 68939 362361 678044 1.273524214816 2.38902440336 2232 1522 1522 3397104 5170392288
+471	25462177 91006 362363 678046 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+472	25553183 151239 362363 678046 1.273524214816 2.38902440336 4463 3042478 3045522 13585402440 4.1354062857111e+16
+473	25704422 68939 362365 678048 1.273524214816 2.38902440336 2232 1522 1522 3397104 5170392288
+474	25773361 91006 362365 678048 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+475	25864367 124486 362365 678048 1.273524214816 2.38902440336 4464 0 1 2232 2232
+476	25988853 131182 362365 678048 1.273524214816 2.38902440336 4464 0 1522 3397104 5170392288
+477	26120035 68939 362365 678048 1.273524214816 2.38902440336 2232 1522 1522 3397104 5170392288
+478	26188974 91006 362365 678048 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+479	26279980 68939 362366 678049 1.273524214816 2.38902440336 2232 1522 1522 3397104 5170392288
+480	26348919 151239 362366 678049 1.273524214816 2.38902440336 4463 3042478 3045522 13585402440 4.1354062857111e+16
+481	26500158 91006 362366 678049 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+482	26591164 91006 362366 678049 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+483	26682170 68939 362367 678050 1.273524214816 2.38902440336 2232 1522 1522 3397104 5170392288
+484	26751109 151239 362367 678050 1.273524214816 2.38902440336 4463 3042478 3045522 13585402440 4.1354062857111e+16
+485	26902348 91006 362367 678050 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+486	26993354 91006 362367 678050 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+562	27084360 50096 362340 678026 1.2735 2.389 2232 1500 1500 3348000 5022000000
+563	27134456 50096 362340 678026 1.2735 2.389 2232 1522 1522 3397104 5170392288
+564	27184552 113584 362340 678026 1.273 2.389 4464 3044000 3045522 13591813104 4.1383825043543e+16
+565	27298136 50096 362344 678030 1.2735 2.389 2232 1522 1522 3397104 5170392288
+566	27348232 43400 362344 678030 1.2735 2.389 2232 0 0 0 0
+567	27391632 105643 362344 678082 1.2735 2.389150128985 4464 0 1 2232 2232
+568	27497275 112339 362344 678082 1.2735 2.389150128985 4464 0 1522 3397104 5170392288
+569	27609614 43400 362344 678030 1.2735 2.389 2232 1 1 2232 2232
+570	27653014 68939 362418 678101 1.273775914816 2.389276078985 2232 1522 1522 3397104 5170392288
+571	27721953 91006 362418 678101 1.273775914816 2.389276078985 2232 0.000275685353 0.000276289808 0.615989088429 0.00017000119538807
+572	27812959 124486 362418 678102 1.273775914816 2.389276078985 4464 0 1 2232 2232
+573	27937445 131182 362418 678102 1.273775914816 2.389276078985 4464 0 1522 3397104 5170392288
+574	28068627 62243 362418 678101 1.273775914816 2.389276078985 2232 1 1 2232 2232
+575	28130870 68939 362324 678007 1.273401764816 2.38890195336 2232 1522 1522 3397104 5170392288
+576	28199809 91006 362324 678007 1.273401764816 2.38890195336 2232 0.000401635353 0.000402239808 0.89710922426 0.00036057574880593
+577	28290815 124486 362324 678008 1.273401764816 2.38890195336 4464 0 1 2232 2232
+578	28415301 131182 362324 678008 1.273401764816 2.38890195336 4464 0 1522 3397104 5170392288
+579	28546483 62243 362324 678007 1.273401764816 2.38890195336 2232 1 1 2232 2232
+580	28608726 68939 362366 678049 1.273524214816 2.38902440336 2232 1522 1522 3397104 5170392288
+581	28677665 151239 362366 678049 1.273524214816 2.38902440336 4463 3042478 3045522 13585402440 4.1354062857111e+16
+582	28828904 91006 362366 678049 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+583	28919910 91006 362366 678049 1.273524214816 2.38902440336 2232 0.000524085353 0.000524689808 1.17041762426 0.0006137444114072
+588	29010916 6885 362946 677102 1.275524792874 2.385551055307 223 1518 1518 338514 513864252
+589	29017801 9087 362946 677102 1.275524792874 2.385551055307 223 0.000524695362 0.000551554023 0.119592121203 6.4173653138249e-05
+590	29026888 12432 362946 677103 1.275524792874 2.385551055307 446 0 1 223 223
+591	29039320 13101 362946 677103 1.275524792874 2.385551055307 446 0 1518 338514 513864252
+592	29052421 6216 362946 677102 1.275524792874 2.385551055307 223 1 1 223 223
+593	29058637 6885 362975 677105 1.27554987275 2.385551055307 223 1518 1518 338514 513864252
+594	29065522 6885 362984 677114 1.27567195275 2.385673135307 223 1518 1518 338514 513864252
+595	29072407 6885 362985 677115 1.27567200275 2.385673185307 223 1518 1518 338514 513864252
+596	29079292 6885 362985 677115 1.27567200275 2.385673185307 223 1518 1518 338514 513864252
+597	29086177 9087 362987 677117 1.27567200275 2.385673185307 223 0.000671898415 0.000673684023 0.15001272993 0.00010091407595887
+598	29095264 14694 362987 677117 1.270672418953 2.385673185307 447 302082 305118 135701610 41197218336252
+599	29109958 18 567923 567923 2 2 1 1522 1522 1522 2316484
+600	29109976 18 567923 567923 2 2 1 1518 1518 1518 2304324
+601	29109994 21 567923 567923 2 2 1 3044722 3044722 3044722 9270332057284
+602	29110015 18 567926 567926 2 2 1 1518 1518 1518 2304324
+603	29110033 18 567926 567926 2 2 1 1518 1518 1518 2304324
+604	29110051 20 567926 567926 2 2 1 303600 303600 303600 92172960000
+605	29110071 18 567933 567933 2 2 1 1522 1522 1522 2316484
+606	29110089 18 567933 567933 2 2 1 1522 1522 1522 2316484
+607	29110107 21 567933 567933 2 2 1 3044000 3044000 3044000 9265936000000
+608	29110128 18 567960 567960 2 2 1 1522 1522 1522 2316484
+609	29110146 18 567960 567960 2 2 1 1522 1522 1522 2316484
+610	29110164 21 567960 567960 2 2 1 3044000 3044000 3044000 9265936000000
+611	29110185 18 567962 567962 2 2 1 1522 1522 1522 2316484
+612	29110203 18 567962 567962 2 2 1 1522 1522 1522 2316484
+613	29110221 21 567962 567962 2 2 1 3044000 3044000 3044000 9265936000000
+614	29110242 18 567994 567994 2 2 1 1522 1522 1522 2316484
+615	29110260 18 567994 567994 2 2 1 1518 1518 1518 2304324
+616	29110278 21 567994 567994 2 2 1 3347600 3347600 3347600 11206425760000
+617	29110299 18 568024 568024 2 2 1 1522 1522 1522 2316484
+618	29110317 18 568024 568024 2 2 1 1522 1522 1522 2316484
+619	29110335 21 568024 568024 2 2 1 3044000 3044000 3044000 9265936000000
+620	29110356 18 568057 568057 2 2 1 1522 1522 1522 2316484
+621	29110374 18 568057 568057 2 2 1 1518 1518 1518 2304324
+622	29110392 21 568057 568057 2 2 1 3347600 3347600 3347600 11206425760000
+623	29110413 18 568070 568070 2 2 1 1522 1522 1522 2316484
+624	29110431 18 568070 568070 2 2 1 1522 1522 1522 2316484
+625	29110449 21 568070 568070 2 2 1 3044000 3044000 3044000 9265936000000
+626	29110470 18 568001 568001 2 2 1 1518 1518 1518 2304324
+627	29110488 18 568001 568001 2 2 1 1518 1518 1518 2304324
+628	29110506 20 568001 568001 2 2 1 303600 303600 303600 92172960000
+629	29110526 18 568121 568121 2 2 1 1518 1518 1518 2304324
+630	29110544 18 568121 568121 2 2 1 1518 1518 1518 2304324
+631	29110562 20 568121 568121 2 2 1 303600 303600 303600 92172960000
+632	29110582 18 568162 568162 2 2 1 1518 1518 1518 2304324
+633	29110600 18 568162 568162 2 2 1 1518 1518 1518 2304324
+634	29110618 20 568162 568162 2 2 1 303600 303600 303600 92172960000
+5	29110638 40292 678242 778155 2.389398478985 2.742775875573 1556 0 1 778 778
+9	29150930 36663 678148 778199 2.38902435336 2.742901825573 1416 0 1 708 708
+10	29187593 3822 678520 777570 2.385673135307 2.740551231253 142 0 1 71 71
+11	29191415 41337 678222 778135 2.389272528985 2.742649925573 1556 0 1 778 778
+38	29232752 2124 678442 777492 2.390425835231 2.740425601253 71 1518 1518 107778 163607004
+39	29234876 4529 678442 777492 2.390399355971 2.740425601253 142 302082 305118 43100574 13082271819804
+40	29239405 2828 678442 777492 2.390425835231 2.740425601253 71 0.000399127208 0.000425987184 0.029222498177 1.203975296583e-05
+59	29242233 21134 678241 778154 2.389775838985 2.742775875573 707 1522 1522 1076054 1637754188
+60	29263367 46463 678241 778154 2.389775838985 2.742775875573 1413 3042478 3045522 4301130906 1.3092519025482e+16
+61	29309830 28128 678241 778154 2.389775838985 2.742775875573 707 0.000275682261 0.000276299505 0.195131467417 5.3856154386527e-05
+155	29337958 21872 678147 778198 2.389402028985 2.742901825573 708 1522 1522 1077576 1640070672
+156	29359830 47978 678147 778198 2.388902136586 2.742901825573 1416 3042478 3045522 4310261384 1.3120307569863e+16
+157	29407808 28876 678147 778198 2.389402028985 2.742901825573 708 0.000401632261 0.000402249505 0.284580146402 0.00011438682390115
+158	29436684 2195 678519 777569 2.390551465231 2.740551231253 71 1518 1518 107778 163607004
+159	29438879 4673 678519 777569 2.390549833399 2.740551231253 142 302082 305118 43112718 13089645656604
+160	29443552 2899 678519 777569 2.390551465231 2.740551231253 71 0.000549784689 0.000551617184 0.039093123819 2.1524993333706e-05
+182	29446451 1833 678396 777446 2.390300205231 2.740299971253 71 1518 1518 107778 163607004
+183	29448284 3876 678396 777446 2.39 2.740299971253 142 302082 305118 43140042 13106236789404
+184	29452160 2046 678396 777446 2.390300205231 2.740299971253 71 0 0.000300357184 0.009901157042 2.9706951014607e-06
+203	29454206 21841 678221 778134 2.389649888985 2.742649925573 707 1522 1522 1076054 1637754188
+204	29476047 47876 678221 778134 2.389649888985 2.742649925573 1413 3042478 3045522 4301130906 1.3092519025482e+16
+205	29523923 28835 678221 778134 2.389649888985 2.742649925573 707 0.000149732261 0.000150349505 0.106084817417 1.5917963311685e-05
+254	29552758 1522 678309 777352 2.39 2.74 71 1500 1500 106500 159750000
+255	29554280 1593 678309 777352 2.39 2.74 71 0.005 0.005 0.355 0.001775
+256	29555873 39428 678228 778166 2.389749964102 2.742874986553 1414 0 1 707 707
+257	29595301 39428 678229 778167 2.389749964102 2.742874986553 1414 0 1 707 707
+258	29634729 39444 678191 778142 2.389549979791 2.742750039363 1414 0 1 707 707
+259	29674173 39444 678191 778142 2.389549979791 2.742750039363 1414 0 1 707 707
+260	29713617 39444 678191 778142 2.389549979791 2.742750039363 1414 0 1 707 707
+261	29753061 39444 678191 778142 2.389549979791 2.742750039363 1414 0 1 707 707
+262	29792505 39444 678191 778142 2.389549979791 2.742750039363 1414 0 1 707 707
+263	29831949 39444 678191 778142 2.389549979791 2.742750039363 1414 0 1 707 707
+264	29871393 39444 678191 778142 2.389549979791 2.742750039363 1414 0 1 707 707
+265	29910837 39444 678192 778143 2.389549979791 2.742750039363 1414 0 1 707 707
+266	29950281 39444 678192 778143 2.389549979791 2.742750039363 1414 0 1 707 707
+267	29989725 39444 678192 778143 2.389549979791 2.742750039363 1414 0 1 707 707
+268	30029169 39444 678192 778143 2.389549979791 2.742750039363 1414 0 1 707 707
+269	30068613 39444 678192 778143 2.389549979791 2.742750039363 1414 0 1 707 707
+270	30108057 39444 678192 778143 2.389549979791 2.742750039363 1414 0 1 707 707
+271	30147501 39444 678192 778143 2.389549979791 2.742750039363 1414 0 1 707 707
+272	30186945 39444 678193 778144 2.389549979791 2.742750039363 1414 0 1 707 707
+273	30226389 39444 678193 778144 2.389549979791 2.742750039363 1414 0 1 707 707
+274	30265833 39444 678193 778144 2.389549979791 2.742750039363 1414 0 1 707 707
+275	30305277 39444 678193 778144 2.389549979791 2.742750039363 1414 0 1 707 707
+276	30344721 39444 678193 778144 2.389549979791 2.742750039363 1414 0 1 707 707
+277	30384165 39444 678193 778144 2.389549979791 2.742750039363 1414 0 1 707 707
+278	30423609 39444 678193 778144 2.389549979791 2.742750039363 1414 0 1 707 707
+279	30463053 39447 678219 778157 2.389649888985 2.742799946198 1414 0 1 707 707
+280	30502500 39482 678174 778218 2.389500128985 2.742999973698 1415 0 1 707 707
+281	30541982 39482 678174 778218 2.389500128985 2.742999973698 1415 0 1 707 707
+282	30581464 39482 678174 778218 2.389500128985 2.742999973698 1415 0 1 707 707
+283	30620946 39482 678174 778218 2.389500128985 2.742999973698 1415 0 1 707 707
+284	30660428 39482 678174 778218 2.389500128985 2.742999973698 1415 0 1 707 707
+285	30699910 39482 678174 778218 2.389500128985 2.742999973698 1415 0 1 707 707
+286	30739392 39482 678174 778218 2.389500128985 2.742999973698 1415 0 1 707 707
+287	30778874 17412 678161 778220 2.3895 2.743 779 1518 1522 1185354 1803677676
+288	30796286 15075 678161 778220 2.3895 2.743 779 0 0 0 0
+289	30811361 30150 678161 778220 2.3895 2.743 1558 0 1 779 779
+290	30841511 32487 678161 778220 2.3895 2.743 1558 0 1522 1185354 1803677676
+291	30873998 17412 678161 778220 2.3895 2.743 779 1518 1522 1185354 1803677676
+292	30891410 15075 678161 778220 2.3895 2.743 779 0 0 0 0
+303	30906485 1522 678314 777357 2.39 2.74 71 1518 1518 107778 163607004
+304	30908007 1309 678314 777357 2.39 2.74 71 0 0 0 0
+305	30909316 2929 678314 777439 2.39 2.740299971253 142 0 1 71 71
+306	30912245 3142 678314 777439 2.39 2.740299971253 142 0 1518 107778 163607004
+307	30915387 1309 678314 777357 2.39 2.74 71 1 1 71 71
+413	30916696 39449 678191 778188 2.389549979791 2.742900024363 1414 0 1 707 707
+414	30956145 39449 678192 778189 2.389549979791 2.742900024363 1414 0 1 707 707
+415	30995594 39449 678193 778190 2.389549979791 2.742900024363 1414 0 1 707 707
+416	31035043 39453 678216 778166 2.389625011912 2.742874986553 1414 0 1 707 707
+417	31074496 39453 678216 778166 2.389625011912 2.742874986553 1414 0 1 707 707
+418	31113949 39453 678216 778166 2.389625011912 2.742874986553 1414 0 1 707 707
+419	31153402 39453 678216 778166 2.389625011912 2.742874986553 1414 0 1 707 707
+420	31192855 39453 678216 778166 2.389625011912 2.742874986553 1414 0 1 707 707
+421	31232308 39453 678216 778166 2.389625011912 2.742874986553 1414 0 1 707 707
+422	31271761 39453 678216 778166 2.389625011912 2.742874986553 1414 0 1 707 707
+423	31311214 39453 678217 778167 2.389625011912 2.742874986553 1414 0 1 707 707
+424	31350667 39453 678217 778167 2.389625011912 2.742874986553 1414 0 1 707 707
+425	31390120 39453 678217 778167 2.389625011912 2.742874986553 1414 0 1 707 707
+426	31429573 39453 678217 778167 2.389625011912 2.742874986553 1414 0 1 707 707
+427	31469026 39453 678217 778167 2.389625011912 2.742874986553 1414 0 1 707 707
+428	31508479 39453 678217 778167 2.389625011912 2.742874986553 1414 0 1 707 707
+429	31547932 39453 678217 778167 2.389625011912 2.742874986553 1414 0 1 707 707
+430	31587385 23674 678222 778135 2.389649888985 2.742649925573 778 1518 1522 1183832 1801361192
+431	31611059 23887 678232 778145 2.389772288985 2.742772325573 778 1518 1522 1183832 1801361192
+432	31634946 23887 678233 778146 2.389772338985 2.742772375573 778 1518 1522 1183832 1801361192
+433	31658833 23887 678233 778146 2.389772338985 2.742772375573 778 1518 1522 1183832 1801361192
+434	31682720 31436 678235 778148 2.389772338985 2.742772375573 778 0.00012213 0.000422487184 0.211229354459 5.8947063905048e-05
+435	31714156 52361 678235 778148 2.389772338985 2.742772375573 1555 3344560 3350640 5205481460 1.7425749381489e+16
+436	31766517 2046 678440 777490 2.390425835231 2.740425601253 71 1518 1518 107778 163607004
+437	31768563 2601 678440 777490 2.390425835231 2.740425601253 71 0.00012563 0.000425987184 0.018820887042 6.5790454997337e-06
+438	31771164 3815 678440 777491 2.390425835231 2.740425601253 142 0 1 71 71
+439	31774979 4028 678440 777491 2.390425835231 2.740425601253 142 0 1518 107778 163607004
+440	31779007 1833 678440 777490 2.390425835231 2.740425601253 71 1 1 71 71
+441	31780840 24036 678242 778155 2.389775838985 2.742775875573 778 1518 1522 1183832 1801361192
+442	31804876 19730 678167 778211 2.389500092613 2.742999937241 708 1 1 708 708
+443	31824606 23084 678168 778212 2.389500092613 2.742999937241 708 -1.6e-11 1.6e-11 1.504e-09 5.4594e-20
+444	31847690 20019 678169 778213 2.389500092613 2.742999937241 708 -7 6 116 4712
+445	31867709 19736 678150 778201 2.389499866558 2.742999933265 708 1 1 708 708
+446	31887445 23306 678151 778202 2.389499866558 2.742999933265 708 -1.6e-11 1.6e-11 -1.67e-10 5.9293e-20
+447	31910751 20032 678152 778203 2.389499866558 2.742999933265 708 -7 7 -15 4935
+448	31930783 19755 678171 778215 2.389500128985 2.742999973698 708 1 1 708 708
+449	31950538 23474 678172 778216 2.389500128985 2.742999973698 708 -1.6e-11 1.6e-11 2.048e-09 8.3126e-20
+450	31974012 20033 678173 778217 2.389500128985 2.742999973698 708 -7 7 162 5314
+451	31994045 19729 678176 778205 2.389500219712 2.742999935619 708 1 1 708 708
+452	32013774 23193 678177 778206 2.389500219712 2.742999935619 708 -1.6e-11 1.6e-11 -2.31e-10 5.6017e-20
+453	32036967 20045 678178 778207 2.389500219712 2.742999935619 708 -8 7 -12 5014
+454	32057012 19727 678154 778063 2.389499907929 2.742499904379 707 1 1 707 707
+455	32076739 23467 678155 778064 2.389499907929 2.742499904379 707 -1.6e-11 1.6e-11 -1.787e-09 6.3907e-20
+456	32100206 20052 678156 778065 2.389499907929 2.742499904379 707 -6 7 -141 5199
+457	32120258 24036 678269 778182 2.389898238985 2.742898275573 778 1518 1522 1183832 1801361192
+458	32144294 24036 678270 778183 2.389898288985 2.742898325573 778 1518 1522 1183832 1801361192
+459	32168330 24036 678270 778183 2.389898288985 2.742898325573 778 1518 1522 1183832 1801361192
+460	32192366 31734 678272 778185 2.389898288985 2.742898325573 778 0.000398132261 0.000548117184 0.319597345594 0.00013248126821489
+461	32224100 52689 678272 778185 2.389898288985 2.742898325573 1555 3346078 3349122 5205466280 1.7425647582417e+16
+467	32276789 21872 678148 778199 2.389402028985 2.742901825573 708 1522 1522 1077576 1640070672
+468	32298661 21841 678181 778094 2.389524428985 2.742524152448 707 1522 1522 1076054 1637754188
+469	32320502 21841 678182 778095 2.389524478985 2.742524202448 707 1522 1522 1076054 1637754188
+470	32342343 21841 678182 778095 2.389524478985 2.742524202448 707 1522 1522 1076054 1637754188
+471	32364184 28835 678184 778097 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+472	32393019 47910 678184 778097 2.389024586586 2.742524202448 1414 3042478 3045522 4304171862 1.310176642961e+16
+473	32440929 21841 678186 778099 2.389524478985 2.742524202448 707 1522 1522 1076054 1637754188
+474	32462770 28835 678186 778099 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+475	32491605 39440 678186 778099 2.389524478985 2.742524202448 1414 0 1 707 707
+476	32531045 41561 678186 778099 2.389524478985 2.742524202448 1414 0 1522 1076054 1637754188
+477	32572606 21841 678186 778099 2.389524478985 2.742524202448 707 1522 1522 1076054 1637754188
+478	32594447 28835 678186 778099 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+479	32623282 21841 678187 778100 2.389524478985 2.742524202448 707 1522 1522 1076054 1637754188
+480	32645123 47910 678187 778100 2.389024586586 2.742524202448 1414 3042478 3045522 4304171862 1.310176642961e+16
+481	32693033 28835 678187 778100 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+482	32721868 28835 678187 778100 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+483	32750703 21841 678188 778101 2.389524478985 2.742524202448 707 1522 1522 1076054 1637754188
+484	32772544 47910 678188 778101 2.389024586586 2.742524202448 1414 3042478 3045522 4304171862 1.310176642961e+16
+485	32820454 28835 678188 778101 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+486	32849289 28835 678188 778101 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+562	32878124 15890 678160 778219 2.3895 2.743 708 1500 1500 1062000 1593000000
+563	32894014 15890 678160 778219 2.3895 2.743 708 1522 1522 1077576 1640070672
+564	32909904 36028 678160 778219 2.389 2.743 1416 3044000 3045522 4311381576 1.3127127298759e+16
+565	32945932 15868 678164 778078 2.3895 2.7425 707 1522 1522 1076054 1637754188
+566	32961800 13747 678164 778078 2.3895 2.7425 707 0 0 0 0
+567	32975547 33467 678164 778133 2.3895 2.742649925573 1414 0 1 707 707
+568	33009014 35588 678164 778133 2.3895 2.742649925573 1414 0 1522 1076054 1637754188
+569	33044602 13747 678164 778078 2.3895 2.7425 707 1 1 707 707
+570	33058349 21841 678239 778152 2.389775838985 2.742775875573 707 1522 1522 1076054 1637754188
+571	33080190 28835 678239 778152 2.389775838985 2.742775875573 707 0.000275682261 0.000276299505 0.195131467417 5.3856154386527e-05
+572	33109025 39440 678239 778153 2.389775838985 2.742775875573 1414 0 1 707 707
+573	33148465 41561 678239 778153 2.389775838985 2.742775875573 1414 0 1522 1076054 1637754188
+574	33190026 19720 678239 778152 2.389775838985 2.742775875573 707 1 1 707 707
+575	33209746 21872 678145 778196 2.389402028985 2.742901825573 708 1522 1522 1077576 1640070672
+576	33231618 28876 678145 778196 2.389402028985 2.742901825573 708 0.000401632261 0.000402249505 0.284580146402 0.00011438682390115
+577	33260494 39496 678145 778197 2.389402028985 2.742901825573 1416 0 1 708 708
+578	33299990 41620 678145 778197 2.389402028985 2.742901825573 1416 0 1522 1077576 1640070672
+579	33341610 19748 678145 778196 2.389402028985 2.742901825573 708 1 1 708 708
+580	33361358 21841 678187 778100 2.389524478985 2.742524202448 707 1522 1522 1076054 1637754188
+581	33383199 47910 678187 778100 2.389024586586 2.742524202448 1414 3042478 3045522 4304171862 1.310176642961e+16
+582	33431109 28835 678187 778100 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+583	33459944 28835 678187 778100 2.389524478985 2.742524202448 707 0.000524082261 0.000524699505 0.370750470829 0.00019442139064855
+588	33488779 2195 678517 777567 2.390551465231 2.740551231253 71 1518 1518 107778 163607004
+589	33490974 2899 678517 777567 2.390551465231 2.740551231253 71 0.000524757208 0.000551617184 0.038142228177 2.0502783537683e-05
+590	33493873 3964 678517 777568 2.390551465231 2.740551231253 142 0 1 71 71
+591	33497837 4177 678517 777568 2.390551465231 2.740551231253 142 0 1518 107778 163607004
+592	33502014 1982 678517 777567 2.390551465231 2.740551231253 71 1 1 71 71
+593	33503996 2195 678520 777570 2.390551465231 2.740551231253 71 1518 1518 107778 163607004
+594	33506191 2195 678529 777579 2.390673545231 2.740673311253 71 1518 1518 107778 163607004
+595	33508386 2195 678530 777580 2.390673595231 2.740673361253 71 1518 1518 107778 163607004
+596	33510581 2195 678530 777580 2.390673595231 2.740673361253 71 1518 1518 107778 163607004
+597	33512776 2899 678532 777582 2.390673595231 2.740673361253 71 0.000671914689 0.000673747184 0.047764353819 3.2132897077635e-05
+598	33515675 4673 678532 777582 2.390671963399 2.740673361253 142 302082 305118 43112718 13089645656604
+

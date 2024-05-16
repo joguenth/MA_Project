@@ -1,0 +1,10 @@
+package sdn4core.examples.papers.vtc2019.withoutSDN;
+
+import core4inet.nodes.inet.RTIPHost;
+
+module client1 extends RTIPHost
+{
+	submodules:
+	connections: 
+ 
+}
